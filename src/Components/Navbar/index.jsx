@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { animateScroll as scroll } from "react-scroll";
+import Logo from "../../Images/logo.svg";
 import {
   MobileIcon,
   Nav,
@@ -39,7 +40,7 @@ const Navbar = ({ toggle }) => {
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
             <NavLogo to="/" onClick={toggleHome}>
-              Kenzie Habit
+              <img src={Logo} alt="logo" />
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />

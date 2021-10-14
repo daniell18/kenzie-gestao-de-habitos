@@ -35,9 +35,9 @@ export const homeObjTwo = {
 
 export const homeObjThree = {
   id: "signup",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
   topLine: "Entre para o nosso time",
   headline: "Criar uma conta é extremamente facil",
   description:
@@ -48,23 +48,5 @@ export const homeObjThree = {
   alt: "Car",
   dark: true,
   primary: true,
-  darkText: false,
-};
-
-export const homeObjFour = {
-  id: "signup",
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
-  topLine: "Entre para o nosso time",
-  headline: "Criar uma conta é extremamente facil",
-  description:
-    "tenha tudo configurado e pronto em menos de 10 minutos. Tudo que você precisa fazer é adicionar suas informações e você está pronto para ir",
-  buttonLabel: "Começe agora",
-  imgStart: false,
-  img: require("../../Images/svg-4.svg").default,
-  alt: "Car",
-  dark: true,
-  primary: true,
-  darkText: false,
+  darkText: true,
 };
