@@ -93,6 +93,9 @@ export const SocialLogo = styled(Link)`
   align-items: center;
   margin-bottom: 16px;
   font-weight: bold;
+  img {
+    width: 200px;
+  }
 `;
 
 export const WebsiteRights = styled.small`

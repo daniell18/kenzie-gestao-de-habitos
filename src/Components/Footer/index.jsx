@@ -1,5 +1,6 @@
 import React from "react";
 import { animateScroll as scroll } from "react-scroll";
+import Logo from "../../Images/logo.svg";
 import {
   FooterContainer,
   FooterLink,
@@ -71,7 +72,7 @@ const Footer = () => {
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to="/" onClick={toggleHome}>
-              Kenzie Habit
+              <img src={Logo} alt="logo" />
             </SocialLogo>
             <WebsiteRights>
               Kenzie Habit © {new Date().getFullYear()} Todos os direitos
