@@ -77,6 +77,10 @@ export const NavLinks = styled(LinkS)`
   height: 100%;
   cursor: pointer;
 
+  &.hover {
+    color: var(--purple2);
+  }
+
   &.active {
     border-bottom: 3px solid var(--purple1);
   }
@@ -106,6 +110,7 @@ export const NavBtnLink = styled(LinkR)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
+    background: var(--white);
     color: var(--black);
   }
 `;
