@@ -53,8 +53,9 @@ export const TextWrapper = styled.div`
 `;
 
 export const TopLine = styled.p`
-  color: var(--blue);
-  font-size: 16px;
+  color: ${({ topLineText }) =>
+    topLineText ? "var(--purple2)" : "var(--black)"};
+  font-size: 18px;
   line-height: 16px;
   font-weight: 700;
   letter-spacing: 1.4px;

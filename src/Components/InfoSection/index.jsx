@@ -31,6 +31,7 @@ const InfoSection = ({
   primary,
   dark,
   dark2,
+  topLineText,
 }) => {
   return (
     <InfoContainer lightBg={lightBg} id={id}>
@@ -38,7 +39,7 @@ const InfoSection = ({
         <InfoRow imgStart={imgStart}>
           <Column1>
             <TextWrapper>
-              <TopLine>{topLine}</TopLine>
+              <TopLine topLineText={topLineText}>{topLine}</TopLine>
               <Heading lightText={lightText}>{headline}</Heading>
               <Subtitle darkText={darkText}>{description}</Subtitle>
               <BtnWrap>
