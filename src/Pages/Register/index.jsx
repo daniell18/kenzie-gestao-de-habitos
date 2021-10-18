@@ -6,13 +6,12 @@ import logoRegister from "../../Images/logoRegister.svg"
 
 
 function Login() {
-  
   return (
     <>
       <Container>
         <Content>
           <FormContainer>
-          <Logo><img src={logoRegister}/></Logo>
+          <Logo src={logoRegister}/>
             <h1>Login</h1>
             <div>
               <Input
