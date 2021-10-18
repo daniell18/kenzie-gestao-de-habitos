@@ -7,7 +7,6 @@ function Routes() {
   return (
     <Switch>
       <Route exact path="/">
-        <LandingPage />
         <Login />
       </Route>
     </Switch>
