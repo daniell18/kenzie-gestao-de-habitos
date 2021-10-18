@@ -1,16 +1,18 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
-import { Container, Content } from "./styles";
-import { FormContainer } from "./styles";
+import { Container, Content, FormContainer, Logo} from "./styles";
+import logoLogin from "../../Images/logoLogin.svg"
 
 
 function Login() {
+  
   return (
     <>
       <Container>
         <Content>
           <FormContainer>
+          <Logo><img src={logoLogin}/></Logo>
             <h1>Login</h1>
             <div>
               <Input
@@ -30,10 +32,10 @@ function Login() {
             <p>
               Não possui conta? <Link to="/signup">Cadastre-se aqui!</Link>
             </p>
-            <div>
+          </FormContainer>
+          <div>
               <Button type="submit">Entrar</Button>
             </div>
-          </FormContainer>
         </Content>
       </Container>
     </>
