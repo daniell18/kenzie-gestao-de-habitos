@@ -54,6 +54,6 @@ export const FormContainer = styled.form`
 `;
 export const Logo = styled.div`
 width: 100%;
-top: -200px;
+top: -180px;
 position: absolute;
 `
