@@ -12,7 +12,7 @@ function Login() {
       <Container>
         <Content>
           <FormContainer>
-          <Logo><img src={logoLogin}/></Logo>
+          <Logo src={logoLogin}/>
             <h1>Login</h1>
             <div>
               <Input

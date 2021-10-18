@@ -55,7 +55,7 @@ export const FormContainer = styled.form`
     margin-right: 0;
   }
 `;
-export const Logo = styled.div`
+export const Logo = styled.img`
 width: 100%;
 top: -235px;
 position: absolute;
