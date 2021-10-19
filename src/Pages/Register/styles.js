@@ -10,6 +10,14 @@ export const Container = styled.div`
   position: relative;
   z-index: 500;
   height: 100vh;
+  background-color: var(--purple4);
+`;
+
+export const Paragrafo = styled.p`
+  color: white;
+  a{
+    color: white;
+  }
 `;
 
 export const Content = styled.div`
