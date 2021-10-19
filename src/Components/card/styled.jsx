@@ -9,9 +9,19 @@ export const Conteiner = styled.div`
     background-color: #212324;
     margin: 3%;
     border-radius: 10px;
-    padding: 20px;
-
+    padding: 10px;
+    
     color: white;
+    
+    @media screen and (min-width: 800px){
+        width: 40%;
+        height: 100px;
+
+        padding: 5px;
+        border-radius: 3px;
+        
+        background-color: ${({color}) => color}; 
+    }
 `
 
 export const ConteinerCard = styled.div`
@@ -22,8 +32,14 @@ export const ConteinerCard = styled.div`
     justify-content: space-around;
 
     text-align: center;
+
+    @media screen and (min-width : 800px){
+        text-align: end;
+        
+    }
 `
 export const Conteinername = styled.div`
+
 
 `
 export const ProgressBar = styled.div`
@@ -35,18 +51,41 @@ export const ProgressBar = styled.div`
         margin: 0;
         margin-left: 10px;
         color: #949595;
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: 800px){
+        flex-direction: column;
+        align-items: flex-end;
+
+        p{
+            color: white;
+        }
     }
 `
 export const Progress = styled.div`
-    width: 40%;
+    width: 100%;
     height: 3px;
 
     background-color: #444545;
 
     div{
-        width:  ${({numberProgress})=>numberProgress}%;
+        width:  ${({number})=>number}%;
         height: 100%;
 
-        background-color: ${({colorProgress}) => colorProgress};
+        background-color: ${({color}) => color};
+    }
+
+    @media screen and (min-width: 800px){
+        height: 7px;
+        border: solid 1.8px white;
+        border-radius:3px;
+
+        background-color: ${({color}) => color};
+
+        div{
+            background-color: #444545
+        }
+
     }
 `

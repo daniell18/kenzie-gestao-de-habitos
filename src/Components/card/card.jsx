@@ -6,15 +6,15 @@ const Card = ({card}) =>{
     const color = card.cor;
     const name = card.nome;
 
-    return <Conteiner>
+    return <Conteiner color = {color} >
         icon
         <ConteinerCard>
             <Conteinername>
                 {name}
             </Conteinername>
             <ProgressBar>
-                <Progress   colorProgress = {color}
-                            numberProgress = {number}>
+                <Progress   color = {color}
+                            number = {number}>
                     <div></div>
                 </Progress>
                 <p>

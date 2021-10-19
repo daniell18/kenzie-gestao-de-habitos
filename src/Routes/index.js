@@ -3,7 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import LandingPage from "../Pages/LandingPage";
 
 function Routes() {
-  return (
+
+   return (
     <Switch>
       <Route exact path="/">
         <LandingPage />
