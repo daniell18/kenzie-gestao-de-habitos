@@ -10,6 +10,14 @@ export const Container = styled.div`
   position: relative;
   z-index: 500;
   height: 100vh;
+  background-color: var(--purple4);
+`;
+
+export const Paragrafo = styled.p`
+  color: white;
+  a{
+    color: white;
+  }
 `;
 
 export const Content = styled.div`
@@ -56,7 +64,7 @@ export const FormContainer = styled.form`
   }
 `;
 export const Logo = styled.img`
-width: 100%;
-top: -235px;
+width: 320px;
+top: 45px;
 position: absolute;
 `
