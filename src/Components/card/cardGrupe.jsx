@@ -2,8 +2,8 @@ import { Conteiner, ConteinerCard, ConteinerDiscretion, Conteinername} from "./s
 
 const CardGrupe = ({api}) =>{
 
-    const discretion = api.discrição;
-    const name = api.nome;
+    const discretion = api.discretion;
+    const name = api.name;
 
     return <Conteiner>
         icon
