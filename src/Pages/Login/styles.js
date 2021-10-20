@@ -35,10 +35,10 @@ export const Content = styled.div`
   max-width: 300px;
   max-height: 661px;
   @media screen and (min-width: 900px){
-    border: solid 1px black;
     background-color: #00000080;
     max-width: 500px;
     height: 400px;
+    border-radius: 25px;
     }
 `;
 
