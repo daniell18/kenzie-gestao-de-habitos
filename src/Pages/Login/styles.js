@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import img from "../../Images/motivation_call_action_143665_3840x2160.jpg"
 export const Container = styled.div`
   height: calc(100vh - 90px);
   width: 100%;
@@ -12,6 +12,10 @@ export const Container = styled.div`
   z-index: 500;
   height: 100vh;
   background-color: var(--purple4);
+  @media screen and (min-width: 900px){
+    background-image: url(${img})};
+    background-size: cover;
+    background-position-x: center;
 `;
 
 export const Paragrafo = styled.p`
@@ -29,12 +33,19 @@ export const Content = styled.div`
   width: 95vw;
   max-width: 300px;
   max-height: 661px;
+  @media screen and (min-width: 900px){
+    border: solid 1px black;
+    background-color: #00000080;
+    max-width: 500px;
+    height: 400px;
+    }
 `;
 
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 300px;
+  max-height: 661px;
   transform: translateY(0px);
   > h1 {
     font-size: 32px;
@@ -42,7 +53,6 @@ export const FormContainer = styled.form`
     align-self: center;
     margin-bottom: 20px;
   }
-
   > div > input {
     font-size: 16px;
     margin-bottom: 20px;
@@ -50,10 +60,8 @@ export const FormContainer = styled.form`
   > p {
     font-size: 16px;
     margin-bottom: 20px;
-
     a {
       font-weight: 700;
-
       &:hover {
         color: var(--purple4);
       }
@@ -65,9 +73,9 @@ export const FormContainer = styled.form`
   }
 `;
 export const Logo = styled.img`
-    top: 25px;
-    position: absolute;
-  @media screen and (min-width: 900px){
-    left:0px;
-    }
+top: 25px;
+position: absolute;
+@media screen and (min-width: 900px){
+left:0px;
+}
 `
