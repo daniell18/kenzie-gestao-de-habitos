@@ -59,9 +59,9 @@ function Register({ auth }) {
   return (
     <>
       <Container>
+      <Logo src={logoRegister}/>
         <Content>
           <FormContainer onSubmit={handleSubmit(submitForm)}>
-          <Logo src={logoRegister}/>
             <h1>Register</h1>
             <div>
             {!!errors.username?.message && <span>{errors.username.message}</span>}

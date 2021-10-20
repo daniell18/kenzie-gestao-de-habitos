@@ -4,6 +4,7 @@ export const Container = styled.div`
   height: calc(100vh - 90px);
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-size: cover;
@@ -61,7 +62,8 @@ export const FormContainer = styled.form`
   }
 `;
 export const Logo = styled.img`
-width: 100%;
-top: -180px;
-position: absolute;
+    top: 25px;
+    left: 0px;
+    position: absolute;
+}
 `
