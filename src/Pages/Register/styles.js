@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import img from "../../Images/motivation_call_action_143665_3840x2160.jpg"
 export const Container = styled.div`
   height: calc(100vh - 90px);
   width: 100%;
@@ -12,6 +12,10 @@ export const Container = styled.div`
   z-index: 500;
   height: 100vh;
   background-color: var(--purple4);
+  @media screen and (min-width: 900px){
+    background-image: url(${img})};
+    background-size: cover;
+    background-position-x: center;
 `;
 
 export const Paragrafo = styled.p`

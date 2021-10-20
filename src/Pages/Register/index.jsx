@@ -2,6 +2,7 @@ import Button from "../../Components/Button";
 import Input from "../../Components/Input";
 import { Container, Content, FormContainer, Logo, Paragrafo} from "./styles";
 import logoRegister from "../../Images/logoRegister.svg"
+// import imagemFundo from "../../Images/motivation_call_action_143665_3840x2160.jpg"
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -60,6 +61,7 @@ function Register({ auth }) {
     <>
       <Container>
       <Logo src={logoRegister}/>
+      {/* <Fundo src={imagemFundo}/> */}
         <Content>
           <FormContainer onSubmit={handleSubmit(submitForm)}>
             <h1>Register</h1>
