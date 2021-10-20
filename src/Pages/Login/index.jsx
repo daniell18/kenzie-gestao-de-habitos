@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import React from 'react';
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
-import { Container, Content, FormContainer, Logo, Paragrafo} from "./styles";
+import { Container, Content, FormContainer, Logo, Paragrafo, Logo2} from "./styles";
 import logoLogin from "../../Images/logoLogin.svg"
+import logo from "../../Images/logo.svg"
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -49,6 +50,7 @@ function Login({ auth, setAuth }) {
     <>
       <Container>
       <Logo src={logoLogin}/>
+      <Logo2 src={logo}/>
         <Content>
           <FormContainer onSubmit={handleSubmit(submitForm)}>
             <h1>Login</h1>

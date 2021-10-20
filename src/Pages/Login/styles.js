@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import img from "../../Images/motivation_call_action_143665_3840x2160.jpg"
+import img from "../../Images/motivation_words_inscription_176647_3840x2160.jpg"
+
 export const Container = styled.div`
   height: calc(100vh - 90px);
   width: 100%;
@@ -21,7 +22,7 @@ export const Container = styled.div`
 export const Paragrafo = styled.p`
   color: white;
   a{
-    color: white;
+    color: var(--purple2);
   }
 `;
 
@@ -52,6 +53,7 @@ export const FormContainer = styled.form`
     font-weight: bold;
     align-self: center;
     margin-bottom: 20px;
+    color: white;
   }
   > div > input {
     font-size: 16px;
@@ -63,7 +65,7 @@ export const FormContainer = styled.form`
     a {
       font-weight: 700;
       &:hover {
-        color: var(--purple4);
+        color: var(--purple3);
       }
     }
   }
@@ -76,6 +78,19 @@ export const Logo = styled.img`
 top: 25px;
 position: absolute;
 @media screen and (min-width: 900px){
+  display: none;
 left:0px;
+top: 25px;
+}
+`
+
+export const Logo2 = styled.img`
+display: none;
+@media screen and (min-width: 900px){
+  display: block;
+  top: 25px;
+  position: absolute;
+  left:25px;
+  top: 25px;
 }
 `
