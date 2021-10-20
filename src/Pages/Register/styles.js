@@ -62,8 +62,9 @@ export const FormContainer = styled.form`
   }
 `;
 export const Logo = styled.img`
-    top: 25px;
-    left: 0px;
-    position: absolute;
+top: 25px;
+position: absolute;
+@media screen and (min-width: 900px){
+left:0px;
 }
 `
