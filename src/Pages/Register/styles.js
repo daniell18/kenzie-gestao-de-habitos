@@ -38,6 +38,7 @@ export const Content = styled.div`
     background-color: #00000080;
     max-width: 500px;
     height: 600px;
+    border-radius: 25px;
     }
 `;
 
