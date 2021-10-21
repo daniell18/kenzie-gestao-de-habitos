@@ -9,9 +9,11 @@ import {
   FormContainer,
   InputItem,
   Logo,
+  Logo2,
   Paragrafo,
 } from "./styles";
 import logoLogin from "../../Images/logoLogin.svg";
+import logo from "../../Images/logo.svg";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -47,6 +49,7 @@ function Login({ authenticated }) {
     <>
       <Container>
         <Logo onClick={() => history.push("/")} src={logoLogin} />
+        <Logo2 onClick={() => history.push("/")} src={logo} />
         <Content>
           <FormContainer onSubmit={handleSubmit(submitForm)}>
             <h1>Login</h1>

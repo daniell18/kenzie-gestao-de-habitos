@@ -2,16 +2,13 @@ import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import jwtDecode from "jwt-decode";
 import { useHistory } from "react-router";
-
 export const LoginContext = createContext([]);
-
 export const LoginProvider = ({ children }) => {
   const [login, setLogin] = useState();
   const history = useHistory();
   const [aux, setAux] = useState();
   const [subscription, setSubscription] = useState([]);
   const [authenticated, setAuthenticated] = useState(false);
-
   const getLogin = (e) => {
     axios
       .post("https://kenzie-habits.herokuapp.com/sessions/", e)
@@ -28,7 +25,6 @@ export const LoginProvider = ({ children }) => {
         )
       );
   };
-
   useEffect(() => {
     if (login) {
       axios
@@ -46,20 +42,18 @@ export const LoginProvider = ({ children }) => {
         });
     }
   }, [login]);
-
-  localStorage.setItem(
-    "@Kenziehabits:SubscriptionGroup",
-    JSON.stringify(subscription)
-  );
-
-  if (aux) {
+  if (aux && subscription) {
     localStorage.setItem("@Kenziehabits:User", JSON.stringify(aux));
-
+    console.log("here");
+    localStorage.setItem(
+      "@Kenziehabits:SubscriptionGroup",
+      JSON.stringify(subscription)
+    );
     history.push("/home");
   }
   return (
     <LoginContext.Provider
-      value={{ login, getLogin, aux, authenticated, setAuthenticated }}
+      value={{ login, getLogin, aux, setAuthenticated, authenticated }}
     >
       {children}
     </LoginContext.Provider>

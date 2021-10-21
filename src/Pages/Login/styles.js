@@ -91,7 +91,6 @@ display: none;
   top: 25px;
   position: absolute;
   left:25px;
-  top: 25px;
 }
 `
 export const InputItem = styled.input`

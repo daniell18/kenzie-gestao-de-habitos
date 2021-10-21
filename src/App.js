@@ -13,16 +13,13 @@ function App() {
       <div>
         <LoginProvider>
           <HabitsProvider>
-
-              <GroupProvider>
-                <SpecificGroupProvider>
-                  <Routes />
-                </SpecificGroupProvider>
-              </GroupProvider>
-
+            <GroupProvider>
+              <SpecificGroupProvider>
+                <Routes />
+              </SpecificGroupProvider>
+            </GroupProvider>
           </HabitsProvider>
         </LoginProvider>
-
         <Global />
       </div>
     </div>
