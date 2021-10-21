@@ -15,11 +15,9 @@ import logoLogin from "../../Images/logoLogin.svg";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import { Redirect, useHistory } from "react-router";
 import { useContext } from "react";
 import { LoginContext } from "../../Providers/Login";
-import Input from "../../Components/Input";
 import { HabitsContext } from "../../Providers/Habits";
 
 function Login({ authenticated }) {

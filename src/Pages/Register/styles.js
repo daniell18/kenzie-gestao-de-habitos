@@ -75,7 +75,8 @@ export const FormContainer = styled.form`
   }
 `;
 export const Logo = styled.img`
-top: 25px;
+top: -170px;
+left: -15px;
 position: absolute;
 @media screen and (min-width: 900px){
   display: none;
@@ -94,3 +95,16 @@ display: none;
   top: 25px;
 }
 `
+export const InputItem = styled.input`
+  border-radius: 10px;
+  font-size: 16px;
+  width: 100%;
+  padding: 8px 16px;
+`;
+
+export const ErrorSpan = styled.span`
+  position: absolute;
+  top: 41px;
+  color: var(--red);
+  font-size: 14px;
+`;
