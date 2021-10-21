@@ -21,7 +21,6 @@ export const Conteiner = styled.div`
     padding: 5px;
     border-radius: 3px;
 
-    background-color: ${({ color }) => color};
   }
 `;
 
@@ -68,8 +67,10 @@ export const Progress = styled.div`
 
   div {
     width: ${({ number }) => number}%;
+    max-width: 100%;
     height: 100%;
 
+      
     background-color: ${({ color }) => color};
   }
 

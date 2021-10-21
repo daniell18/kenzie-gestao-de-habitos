@@ -11,13 +11,18 @@ import {
 
 const Card = ({ filtered }) => {
   const { specificGroup, getGroup } = useContext(SpecificGroupContext);
+
   const color = "black";
+
   const history = useHistory();
+
   const handleClick = (e) => {
     if (e.name) {
       getGroup(e.id);
     }
   };
+
+  console.log(filtered)
 
   return (
     <>

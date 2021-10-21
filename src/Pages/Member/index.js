@@ -7,7 +7,6 @@ function Member() {
   const group = JSON.parse(
     localStorage.getItem("@Kenziehabits:SpecificGroup")
   ) || [specificGroup];
-  console.log(group);
   return (
     <>
       <div>
