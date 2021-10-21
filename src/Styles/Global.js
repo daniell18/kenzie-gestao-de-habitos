@@ -12,6 +12,7 @@ export default createGlobalStyle`
         cursor: pointer;
     }
     :root{
+        --red: #ff0000;
         --white: #f5f5f5;
         --black: #0c0d0d;
         --grey: #343336;

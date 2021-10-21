@@ -1,12 +1,11 @@
 import Button from "../../Components/Button";
 
-import { Container, Content, FormContainer, Logo, Paragrafo } from "./styles";
+import { Container, Content, FormContainer, Logo, Paragrafo, InputItem, ErrorSpan } from "./styles";
 import logoRegister from "../../Images/logoRegister.svg";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
-import { api } from "../../Components/Services";
 import { Redirect, useHistory } from "react-router";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -64,58 +63,58 @@ function Register({ auth }) {
             <h1>Register</h1>
             <div>
               {!!errors.username?.message && (
-                <span>{errors.username.message}</span>
+                <ErrorSpan>{errors.username.message}</ErrorSpan>
               )}
-              <input
+              <InputItem
                 name="username"
                 label="Username"
                 placeholder="Digite seu usuário"
                 {...register("username")}
-              ></input>
+              ></InputItem>
             </div>
             <div>
-              {!!errors.email?.message && <span>{errors.email.message}</span>}
-              <input
+              {!!errors.email?.message && <ErrorSpan>{errors.email.message}</ErrorSpan>}
+              <InputItem
                 name="email"
                 label="Email"
                 placeholder="Digite seu e-mail"
                 {...register("email")}
-              ></input>
+              ></InputItem>
             </div>
             <div>
               {!!errors.emailConfirm?.message && (
-                <span>{errors.emailConfirm.message}</span>
+                <ErrorSpan>{errors.emailConfirm.message}</ErrorSpan>
               )}
-              <input
+              <InputItem
                 name="email"
                 label="Email"
                 placeholder="Confirme seu e-mail"
                 {...register("emailConfirm")}
-              ></input>
+              ></InputItem>
             </div>
             <div>
               {!!errors.password?.message && (
-                <span>{errors.password.message}</span>
+                <ErrorSpan>{errors.password.message}</ErrorSpan>
               )}
-              <input
+              <InputItem
                 name="password"
                 label="Senha"
                 placeholder="Digite sua senha"
                 type="password"
                 {...register("password")}
-              ></input>
+              ></InputItem>
             </div>
             <div>
               {!!errors.passwordConfirm?.message && (
-                <span>{errors.passwordConfirm.message}</span>
+                <ErrorSpan>{errors.passwordConfirm.message}</ErrorSpan>
               )}
-              <input
+              <InputItem
                 name="password"
                 label="Senha"
                 placeholder="Confirme sua senha"
                 type="password"
                 {...register("passwordConfirm")}
-              ></input>
+              ></InputItem>
             </div>
             <Paragrafo>
               Já possui conta? <Link to="/login">Faça login aqui.</Link>

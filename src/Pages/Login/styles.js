@@ -14,9 +14,9 @@ export const Container = styled.div`
   height: 100vh;
   background-color: var(--purple4);
   @media screen and (min-width: 900px){
-    background-image: url(${img})};
+    background-image: url(${img});
     background-size: cover;
-    background-position-x: center;
+    background-position-x: center;}
 `;
 
 export const Paragrafo = styled.p`
