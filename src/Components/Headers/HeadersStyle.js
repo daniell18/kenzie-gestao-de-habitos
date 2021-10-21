@@ -16,6 +16,37 @@ export const Icon = styled.img`
   height: 70px;
   border-radius: 100px;
 `;
+
+export const ButtonEdit = styled.button`
+position: fixed;
+right: 350px;
+`;
+export const FormContainer = styled.form`
+
+`
+export const Button2 = styled.button`
+  position: fixed;
+  right: 350px;
+  background: #7b2cbf;
+  color: white;
+  font-size: 1em;
+  margin: 10px;
+  padding: 5px 10px;
+  border: 2px solid #7b2cbf;
+  border-radius: 3px;
+  cursor: pointer;
+`;
+export const Button3 = styled.button`
+  background: #7b2cbf;
+  color: white;
+  font-size: 1em;
+  margin: 10px;
+  padding: 5px 10px;
+  border: 2px solid #7b2cbf;
+  border-radius: 3px;
+  cursor: pointer;
+`;
+
 export const ContainerInfo = styled.div`
   display: flex;
   margin-left: 3vw;

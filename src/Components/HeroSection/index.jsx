@@ -19,7 +19,7 @@ import {
 } from "./HeroElements";
 
 const HeroSection = () => {
-  const [videos, setVideos] = useState([Video, Video1, Video2, Video3, Video4]);
+  const [videos] = useState([Video, Video1, Video2, Video3, Video4]);
   const [hover, setHover] = useState(false);
 
   const onHover = () => {

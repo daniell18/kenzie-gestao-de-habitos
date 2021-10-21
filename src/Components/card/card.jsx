@@ -1,4 +1,3 @@
-import { useHistory } from "react-router";
 import { useContext } from "react/cjs/react.development";
 import { SpecificGroupContext } from "../../Providers/SpecificGroup";
 import {
@@ -10,9 +9,8 @@ import {
 } from "./styled";
 
 const Card = ({ filtered }) => {
-  const { specificGroup, getGroup } = useContext(SpecificGroupContext);
+  const { getGroup } = useContext(SpecificGroupContext);
   const color = "black";
-  const history = useHistory();
   const handleClick = (e) => {
     if (e.name) {
       getGroup(e.id);

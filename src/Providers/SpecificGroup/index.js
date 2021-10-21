@@ -1,4 +1,3 @@
-import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 export const SpecificGroupContext = createContext([]);

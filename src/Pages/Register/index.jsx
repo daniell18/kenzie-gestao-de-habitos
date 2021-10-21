@@ -2,8 +2,8 @@ import Button from "../../Components/Button";
 
 import { Container, Content, FormContainer, Logo, Paragrafo, InputItem, ErrorSpan } from "./styles";
 import logoRegister from "../../Images/logoRegister.svg";
-import * as yup from "yup";
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
 import { Redirect, useHistory } from "react-router";

@@ -9,6 +9,7 @@ export const LoginProvider = ({ children }) => {
   const [aux, setAux] = useState();
   const [subscription, setSubscription] = useState([]);
   const [authenticated, setAuthenticated] = useState(false);
+  const [updateLogin, setUpdateLogin] = useState(false);
   const getLogin = (e) => {
     axios
       .post("https://kenzie-habits.herokuapp.com/sessions/", e)
@@ -26,6 +27,7 @@ export const LoginProvider = ({ children }) => {
       );
   };
   useEffect(() => {
+    console.log("estou aqui");
     if (login) {
       axios
         .get(`https://kenzie-habits.herokuapp.com/users/${login.user_id}/`)
@@ -41,10 +43,9 @@ export const LoginProvider = ({ children }) => {
           setSubscription(response.data);
         });
     }
-  }, [login]);
+  }, [login,updateLogin]);
   if (aux && subscription) {
     localStorage.setItem("@Kenziehabits:User", JSON.stringify(aux));
-    console.log("here");
     localStorage.setItem(
       "@Kenziehabits:SubscriptionGroup",
       JSON.stringify(subscription)
@@ -53,7 +54,7 @@ export const LoginProvider = ({ children }) => {
   }
   return (
     <LoginContext.Provider
-      value={{ login, getLogin, aux, setAuthenticated, authenticated }}
+      value={{ login, getLogin, aux, setAuthenticated, authenticated, setUpdateLogin }}
     >
       {children}
     </LoginContext.Provider>
