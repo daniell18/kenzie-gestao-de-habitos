@@ -15,7 +15,7 @@ function Routes() {
   const { authenticated, setAuthenticated } = useContext(LoginContext);
 
   useEffect(() => {
-    const token = JSON.parse(localStorage.getItem("@Kenziehabits:User"));
+    const token = JSON.parse(localStorage.getItem("@Kenziehabits:token"));
 
     if (token) {
       return setAuthenticated(true);

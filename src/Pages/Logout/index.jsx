@@ -4,7 +4,7 @@ import Headers from "../../Components/Headers";
 
 function Logout({ authenticated }) {
   if (!authenticated) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/" />;
   }
   return (
     <>

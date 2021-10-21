@@ -7,7 +7,7 @@ function Home({ authenticated }) {
   const { filtered } = useContext(HabitsContext);
 
   if (!authenticated) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/" />;
   }
   return (
     <>
