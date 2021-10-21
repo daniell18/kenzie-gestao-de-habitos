@@ -11,7 +11,7 @@ import { Redirect, useHistory } from "react-router";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-function Register({ auth }) {
+function Register({ authenticated }) {
   const schema = yup.object().shape({
     username: yup.string().required("Campo obrigatório"),
     email: yup.string().email("Email inválido").required("Campo obrigatório"),
@@ -51,8 +51,8 @@ function Register({ auth }) {
       );
   };
 
-  if (auth) {
-    return <Redirect to="/" />;
+  if (authenticated) {
+    return <Redirect to="/home" />;
   }
 
   return (

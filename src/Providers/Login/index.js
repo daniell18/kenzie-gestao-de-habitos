@@ -10,16 +10,18 @@ export const LoginProvider = ({ children }) => {
   const history = useHistory();
   const [aux, setAux] = useState();
   const [subscription, setSubscription] = useState([]);
+  const [authenticated, setAuthenticated] = useState(false);
 
   const getLogin = (e) => {
     axios
       .post("https://kenzie-habits.herokuapp.com/sessions/", e)
-      .then((Response) =>
+      .then((Response) => {
         localStorage.setItem(
           "@Kenziehabits:token",
           JSON.stringify(Response.data.access)
-        )
-      )
+        );
+        setAuthenticated(true);
+      })
       .then((_) =>
         setLogin(
           jwtDecode(JSON.parse(localStorage.getItem("@Kenziehabits:token")))
@@ -56,7 +58,9 @@ export const LoginProvider = ({ children }) => {
     history.push("/home");
   }
   return (
-    <LoginContext.Provider value={{ login, getLogin, aux }}>
+    <LoginContext.Provider
+      value={{ login, getLogin, aux, authenticated, setAuthenticated }}
+    >
       {children}
     </LoginContext.Provider>
   );

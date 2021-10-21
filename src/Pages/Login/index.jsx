@@ -22,7 +22,7 @@ import { LoginContext } from "../../Providers/Login";
 import Input from "../../Components/Input";
 import { HabitsContext } from "../../Providers/Habits";
 
-function Login({ auth, setAuth }) {
+function Login({ authenticated }) {
   const { getLogin } = useContext(LoginContext);
   const { setHabitsUpdate } = useContext(HabitsContext);
   const schema = yup.object().shape({
@@ -41,8 +41,8 @@ function Login({ auth, setAuth }) {
     setHabitsUpdate(true);
   };
 
-  if (auth) {
-    return <Redirect to="/" />;
+  if (authenticated) {
+    return <Redirect to="/home" />;
   }
 
   return (

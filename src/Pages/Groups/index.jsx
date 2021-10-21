@@ -1,7 +1,12 @@
+import { Redirect } from "react-router";
 import Body from "../../Components/Body";
 import Headers from "../../Components/Headers";
 
-function Groups() {
+function Groups({ authenticated }) {
+  if (!authenticated) {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <>
       <div>

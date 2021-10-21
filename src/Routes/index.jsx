@@ -1,47 +1,58 @@
+import { useContext, useEffect } from "react";
 import { Switch, Route } from "react-router";
 import Goals from "../Pages/Goals";
 import Groups from "../Pages/Groups";
 import Home from "../Pages/Home";
 import LandingPage from "../Pages/LandingPage";
 import Login from "../Pages/Login";
-
 import Logout from "../Pages/Logout";
 import Member from "../Pages/Member";
 import Register from "../Pages/Register";
 import SpecificGroup from "../Pages/SpecificGroup";
+import { LoginContext } from "../Providers/Login";
 
 function Routes() {
+  const { authenticated, setAuthenticated } = useContext(LoginContext);
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("@Kenziehabits:User"));
+
+    if (token) {
+      return setAuthenticated(true);
+    }
+  }, [authenticated]);
+
   return (
     <>
       <Switch>
         <Route exact path="/">
-          <LandingPage />
+          <LandingPage authenticated={authenticated} />
         </Route>
         <Route exact path="/home">
           <div>
-            <Home />
+            <Home authenticated={authenticated} />
           </div>
         </Route>
         <Route exact path="/login">
-          <Login />
+          <Login authenticated={authenticated} />
         </Route>
         <Route exact path="/register">
-          <Register />
+          <Register authenticated={authenticated} />
         </Route>
         <Route exact path="/groups">
-          <Groups />
+          <Groups authenticated={authenticated} />
         </Route>
         <Route exact path="/activites">
-          <SpecificGroup />
+          <SpecificGroup authenticated={authenticated} />
         </Route>
         <Route exact path="/member">
-          <Member />
+          <Member authenticated={authenticated} />
         </Route>
         <Route exact path="/goals">
-          <Goals />
+          <Goals authenticated={authenticated} />
         </Route>
         <Route exact path="/logout">
-          <Logout />
+          <Logout authenticated={authenticated} />
         </Route>
       </Switch>
     </>
