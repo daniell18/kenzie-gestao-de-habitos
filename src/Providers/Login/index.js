@@ -2,8 +2,6 @@ import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import jwtDecode from "jwt-decode";
 import { useHistory } from "react-router";
-import { useContext } from "react/cjs/react.development";
-import { HabitsContext } from "../Habits";
 
 export const LoginContext = createContext([]);
 
@@ -11,6 +9,7 @@ export const LoginProvider = ({ children }) => {
   const [login, setLogin] = useState();
   const history = useHistory();
   const [aux, setAux] = useState();
+  const [subscription, setSubscription] = useState([]);
 
   const getLogin = (e) => {
     axios
@@ -33,8 +32,23 @@ export const LoginProvider = ({ children }) => {
       axios
         .get(`https://kenzie-habits.herokuapp.com/users/${login.user_id}/`)
         .then((Response) => setAux(Response.data));
+      let token = JSON.parse(localStorage.getItem("@Kenziehabits:token"));
+      axios
+        .get(`https://kenzie-habits.herokuapp.com/groups/subscriptions/`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          setSubscription(response.data);
+        });
     }
   }, [login]);
+
+  localStorage.setItem(
+    "@Kenziehabits:SubscriptionGroup",
+    JSON.stringify(subscription)
+  );
 
   if (aux) {
     localStorage.setItem("@Kenziehabits:User", JSON.stringify(aux));

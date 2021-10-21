@@ -6,7 +6,11 @@ function Logout() {
     <>
       <div>
         <Headers type="Perfil" />
-        <Body color="#E2B1B1" />
+        <Body color="#E2B1B1">
+        <button>logout</button>
+        <button>voltar</button>
+        </Body>
+        
       </div>
     </>
   );

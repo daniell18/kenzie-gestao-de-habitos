@@ -28,7 +28,7 @@ export const ContainerInfo = styled.div`
   p {
     color: white;
     font-size: 14px;
-    margin: 2px;
+    margin: 10px;
     font-family: "Encode sans";
     font-weight: bold;
   }
@@ -44,16 +44,11 @@ export const Infos = styled.div`
 `;
 export const NavMenu = styled.div`
   display: flex;
+  position: absolute;
   width: 100%;
   font-weight: bold;
-  margin-top: 2vh;
+  bottom: -15px;
   justify-content: space-evenly;
-  @media screen and (min-width: 700px) {
-    margin-top: 1.5vh;
-  }
-  @media screen and (min-width: 1024px) {
-    margin-top: 4vh;
-  }
 `;
 export const NavHome = styled.div`
   width: 85px;
