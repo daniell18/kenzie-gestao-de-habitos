@@ -44,6 +44,30 @@ export const ButtonPlus = styled.button `
   border-radius: 125px;}
 `;
 
+export const GoHome = styled.button`
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 60px;
+  border: none;
+  left: 35px;
+  border-radius: 125px;
+@media screen and (min-width: 1024px) {
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 100px;
+  left: 170px;
+  border-radius: 125px;}
+@media screen and (min-width: 1440px) {
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 100px;
+  left: 310px;
+  border-radius: 125px;}
+`;
+
 export const LogoutPage = styled.div`
     display: flex;
     flex-direction: column;

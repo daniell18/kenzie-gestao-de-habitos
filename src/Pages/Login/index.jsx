@@ -21,9 +21,11 @@ import { Redirect, useHistory } from "react-router";
 import { useContext } from "react";
 import { LoginContext } from "../../Providers/Login";
 import { HabitsContext } from "../../Providers/Habits";
+import { GroupContext } from "../../Providers/Groups";
 
 function Login({ authenticated }) {
   const { getLogin } = useContext(LoginContext);
+  const { setUpdate } = useContext(GroupContext);
   const { setHabitsUpdate } = useContext(HabitsContext);
   const schema = yup.object().shape({
     username: yup.string().required("Campo obrigatório"),
@@ -39,6 +41,7 @@ function Login({ authenticated }) {
   const submitForm = (e) => {
     getLogin(e);
     setHabitsUpdate(true);
+    setUpdate(true);
   };
 
   if (authenticated) {

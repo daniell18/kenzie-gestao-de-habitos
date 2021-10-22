@@ -6,6 +6,7 @@ import {
   ParagrafoLogout,
   LogoutPage,
   ButtonPlus,
+  GoHome,
 } from "./Bodystyle";
 import { useHistory } from "react-router";
 import { useContext } from "react";
@@ -47,6 +48,7 @@ function Body({ color, page, item }) {
         )}
         {page !== "logout" && page !== "Members"? (<ButtonPlus className = "buttonPlus" onClick = {() => setIsModalVisible(true)} >+</ButtonPlus>) : (null)}
         {isModalVisible ? <Modal filtered = {filtered} page = {page} close = {setIsModalVisible}/> : null}
+        {page !== "logout" ? (<GoHome onClick={() => history.push("/home")}> home </GoHome>) : (null)}
       </ContainerBody>
     </>
   );

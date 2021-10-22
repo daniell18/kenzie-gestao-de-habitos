@@ -48,9 +48,10 @@ function Headers({ type, group }) {
       {type === "Group" && (
         <HeaderContainer>
           <ContainerInfo>
-          <LogoDesk src={logoLogin}/>
+          <LogoDesk
+          onClick={() => history.push("/home")}
+          src={logoLogin}/>
             <Icon
-              onClick={() => history.push("/home")}
               src="https://picsum.photos/200"
               alt="icon"
             />
