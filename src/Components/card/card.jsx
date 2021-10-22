@@ -124,9 +124,10 @@ const Card = ({
         <div>
           {filtered.map((item, index) => (
             <Conteiner key={index} color={color}>
-              {item.how_much_achieved && (
+              {console.log(item)}
+              {item.title && item.frequency ? (
                 <CheckIn onClick={() => handleUp(item)}> Check </CheckIn>
-              )}
+              ) : null}
               {!item.username && (
                 <Delete onClick={() => handleDel(item)}> Delete </Delete>
               )}
