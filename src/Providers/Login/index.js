@@ -9,9 +9,8 @@ export const LoginProvider = ({ children }) => {
   const [aux, setAux] = useState();
   const [subscription, setSubscription] = useState([]);
   const [authenticated, setAuthenticated] = useState(false);
-  const [updateLogin, setUpdateLogin] = useState(false);
+  let updateLogin = 0;
   const getLogin = (e) => {
-    setUpdateLogin(e)
     axios
       .post("https://kenzie-habits.herokuapp.com/sessions/", e)
       .then((Response) => {
@@ -28,7 +27,6 @@ export const LoginProvider = ({ children }) => {
       );
   };
   useEffect(() => {
-    console.log("estou aqui");
     if (login) {
       axios
         .get(`https://kenzie-habits.herokuapp.com/users/${login.user_id}/`)
@@ -55,7 +53,14 @@ export const LoginProvider = ({ children }) => {
   }
   return (
     <LoginContext.Provider
-      value={{ login, getLogin, aux, setAuthenticated, authenticated, updateLogin }}
+      value={{
+        login,
+        getLogin,
+        aux,
+        setAuthenticated,
+        authenticated,
+        updateLogin,
+      }}
     >
       {children}
     </LoginContext.Provider>

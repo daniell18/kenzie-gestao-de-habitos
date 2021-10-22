@@ -12,7 +12,7 @@ export const LogoDesk = styled.img`
 
 export const JoinGroup = styled.button`
   position: fixed;
-  top: 110px;
+  top: 70px;
   right: 50px;
   width: 90px;
   height: 30px;
@@ -27,7 +27,7 @@ export const JoinGroup = styled.button`
 
   @media screen and (min-width: 1024px) {
     position: fixed;
-    top: 155px;
+    top: 105px;
     right: 50px;
   }
 `;
@@ -87,7 +87,7 @@ export const ContainerInfo = styled.div`
   width: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 5px;
   margin-top: 2px;
   p {
@@ -104,7 +104,8 @@ export const ContainerInfo = styled.div`
 
 export const Infos = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: flex-start;
   @media screen and (min-width: 1024px) {
     position: fixed;

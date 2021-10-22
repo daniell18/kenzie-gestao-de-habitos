@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useHistory } from "react-router";
 import logoLogin from "../../Images/logo.svg";
 import {
@@ -14,10 +15,19 @@ import {
 } from "./HeadersStyle";
 
 function Headers({ type, group, page }) {
+  const groupsub =
+    JSON.parse(localStorage.getItem("@Kenziehabits:SpecificGroup")) || "";
   const user = JSON.parse(localStorage.getItem("@Kenziehabits:User")) || "";
+  const token = JSON.parse(localStorage.getItem("@Kenziehabits:token"));
 
   const history = useHistory();
-
+  const handleSub = (id) => {
+    axios
+      .post(`https://kenzie-habits.herokuapp.com/groups/${id}/subscribe/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => console.log(response));
+  };
   return (
     <>
       {type === "Perfil" && (
@@ -29,7 +39,6 @@ function Headers({ type, group, page }) {
               <p>#id:{user.id}</p>
               <p>{user.username}</p>
               <p>{user.email}</p>
-              <p>Titulo</p>
             </Infos>
           </ContainerInfo>
 
@@ -55,6 +64,13 @@ function Headers({ type, group, page }) {
               <p>#id:{group[0].id}</p>
               <p>{group[0].name}</p>
             </Infos>
+            {groupsub[0].users_on_group.find((item) => item.id === user.id) ? (
+              <JoinGroup>Deixar o grupo</JoinGroup>
+            ) : (
+              <JoinGroup onClick={() => handleSub(groupsub[0].id)}>
+                juntar-se
+              </JoinGroup>
+            )}
           </ContainerInfo>
           <JoinGroup onClick={() => history.push("/groups")}>
             Participe

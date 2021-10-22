@@ -23,6 +23,8 @@ function Body({ color, pages, item }) {
   const [setUpdateAct] = useState(false);
   const filtered =
     JSON.parse(localStorage.getItem(`@Kenziehabits:${pages}`)) || [];
+  const filteredGroups =
+    JSON.parse(localStorage.getItem(`@Kenziehabits:Groups`)) || [];
   const [specificGroup, setSpecificGroup] = useState(-1);
   const [updateGoal, setUpadteGoal] = useState(false);
   let id2 = JSON.parse(localStorage.getItem("@Kenziehabits:SpecificGroup"));
@@ -33,6 +35,7 @@ function Body({ color, pages, item }) {
         setSpecificGroup(response);
       });
   };
+
   useEffect(() => {
     if (specificGroup === 2) {
       id2 = JSON.parse(localStorage.getItem("@Kenziehabits:SpecificGroup"));
@@ -63,12 +66,22 @@ function Body({ color, pages, item }) {
   return (
     <>
       <ContainerBody color={color}>
-        <Card
-          setSpecificGroup={setSpecificGroup}
-          setUpadteGoal={setUpadteGoal}
-          filtered={filtered}
-          getGroup={getGroup}
-        />
+        {pages === "SubscriptionGroup" ? (
+          <Card
+            setSpecificGroup={setSpecificGroup}
+            setUpadteGoal={setUpadteGoal}
+            filtered={filtered}
+            filteredGroups={filteredGroups}
+            getGroup={getGroup}
+          />
+        ) : (
+          <Card
+            setSpecificGroup={setSpecificGroup}
+            setUpadteGoal={setUpadteGoal}
+            filtered={filtered}
+            getGroup={getGroup}
+          />
+        )}
         {pages === "logout" && (
           <LogoutPage>
             <LogoSair /> <ParagrafoLogout>Voce dejesa sair?</ParagrafoLogout>
