@@ -77,7 +77,6 @@ const Modal = ({
       .then((response) => {
         console.log(response);
         setSpecificGroup(2);
-        setUpdateAct(true);
       });
   };
   const criarObjMetas = (event) => {
@@ -94,7 +93,6 @@ const Modal = ({
       })
       .then((response) => {
         setSpecificGroup(2);
-        setUpadteGoal(true);
       });
   };
   return (
