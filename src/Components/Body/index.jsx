@@ -62,7 +62,12 @@ function Body({ color, pages, item }) {
   return (
     <>
       <ContainerBody color={color}>
-        <Card filtered={filtered} getGroup={getGroup} />
+        <Card
+          setSpecificGroup={setSpecificGroup}
+          setUpadteGoal={setUpadteGoal}
+          filtered={filtered}
+          getGroup={getGroup}
+        />
         {pages === "logout" && (
           <LogoutPage>
             <LogoSair /> <ParagrafoLogout>Voce dejesa sair?</ParagrafoLogout>
@@ -78,7 +83,9 @@ function Body({ color, pages, item }) {
             />
           </LogoutPage>
         )}
-        {pages !== "logout" ? (<GoHome onClick={() => history.push("/home")}> home </GoHome>) : (null)}
+        {pages !== "logout" ? (
+          <GoHome onClick={() => history.push("/home")}> home </GoHome>
+        ) : null}
         {pages !== "logout" && pages !== "Members" ? (
           <ButtonPlus
             className="buttonPlus"
@@ -102,4 +109,3 @@ function Body({ color, pages, item }) {
   );
 }
 export default Body;
-
