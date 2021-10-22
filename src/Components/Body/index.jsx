@@ -45,10 +45,8 @@ function Body({ color, page, item }) {
             />{" "}
           </LogoutPage>
         )}
-        <Button onClick={() => setIsModalVisible(true)}>criar mais </Button>
-        {isModalVisible ? (
-          <Modal filtered={filtered} page={page} close={setIsModalVisible} />
-        ) : null}
+        {page !== "logout" && page !== "Members"? (<button className = "buttonPlus" onClick = {() => setIsModalVisible(true)} >+</button>) : (null)}
+        {isModalVisible ? <Modal filtered = {filtered} page = {page} close = {setIsModalVisible}/> : null}
       </ContainerBody>
     </>
   );

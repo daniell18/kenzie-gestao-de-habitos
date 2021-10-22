@@ -1,5 +1,5 @@
-import { useContext } from "react/cjs/react.development";
-import { SpecificGroupContext } from "../../Providers/SpecificGroup";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import {
   Conteiner,
   ConteinerCard,
@@ -9,8 +9,39 @@ import {
 } from "./styled";
 
 const Card = ({ filtered }) => {
-  const { getGroup } = useContext(SpecificGroupContext);
+  const [specificGroup, setSpecificGroup] = useState(-1);
+  const history = useHistory();
   const color = "black";
+  const getGroup = (id) => {
+    fetch(`https://kenzie-habits.herokuapp.com/groups/${id}/`)
+      .then((response) => response.json())
+      .then((response) => {
+        setSpecificGroup(response);
+      });
+  };
+  useEffect(() => {
+    if (specificGroup !== -1){
+    localStorage.setItem(
+      "@Kenziehabits:SpecificGroup",
+      JSON.stringify([specificGroup])
+    );
+    localStorage.setItem(
+      "@Kenziehabits:Members",
+      JSON.stringify(specificGroup.users_on_group)
+    );
+    localStorage.setItem(
+      "@Kenziehabits:activities",
+      JSON.stringify(specificGroup.activities)
+    );
+    localStorage.setItem(
+      "@Kenziehabits:goals",
+      JSON.stringify(specificGroup.goals)
+    );
+    if (specificGroup !== -1) {
+      history.push(`/member`);
+    }
+  }
+  }, [specificGroup]);
 
   const handleClick = (e) => {
     if (e.name) {

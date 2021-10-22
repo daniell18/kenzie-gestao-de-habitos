@@ -1,7 +1,6 @@
 import { GroupProvider } from "./Providers/Groups";
 import { HabitsProvider } from "./Providers/Habits";
 import { LoginProvider } from "./Providers/Login";
-import { SpecificGroupProvider } from "./Providers/SpecificGroup";
 
 
 import Routes from "./Routes/index";
@@ -14,9 +13,7 @@ function App() {
         <LoginProvider>
           <HabitsProvider>
             <GroupProvider>
-              <SpecificGroupProvider>
-                <Routes />
-              </SpecificGroupProvider>
+              <Routes />
             </GroupProvider>
           </HabitsProvider>
         </LoginProvider>

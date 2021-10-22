@@ -21,50 +21,57 @@ const Modal = ({close, filtered, page}) =>{
         obj.category = category;
         obj.frequency = frequency;
         obj.difficulty = difficulty;
-        console.log(obj);
+        obj.achieved = false;
+        obj.how_much_achieved = 0;
+        obj.user = "id";
     }
 
     const criarObjGrupos = (event) =>{
         event.preventDefault();
-        obj.title = title;
-        obj.discretion = discretion;
+        obj.name = title;
+        obj.description = discretion;
         obj.category = category;
-        console.log(obj);
     }
 
     const criarObjAtividades = (event) =>{
         event.preventDefault();
         obj.title = title;
-        obj.data = data;
-        console.log(obj);
+        obj.realization_time = data;
+        obj.group = "id";
+        console.log(obj)
     }
 
     const criarObjMetas = (event) =>{
         event.preventDefault();
         obj.title = title;
-        obj.data = data;
-        console.log(obj);
+        obj.difficulty = difficulty;
+        obj.how_much_achieved = 0;
+        obj.group = "id";
     }
 
     return <Conteiner>
-       <ConteinerModal>         
+       <ConteinerModal>        
+            
                 <button className = "buttonClose" 
-                        onClick = {() => close(false)}>
-                    close
-                </button> 
+                        onClick = {() => close(false)}>X</button> 
             
             {page === "Habits"? 
-            (<ConteinerForm  onSubmit = {criarObjGrupos} >
+            (<ConteinerForm  onSubmit = {criarObjHabitos} >
 
                 <div className = "divTitle">
-                    <h1>Nome</h1>
-                    <input value = {title} onChange = {(event) => setTitle(event.target.value)}/>
+                    <h1 className = "nome">Crie seu  novo Hobie</h1>
+                    <input  value = {title} 
+                            onChange = {(event) => setTitle(event.target.value)}
+                            required 
+                            placeholder = "Qual é o seu Hobie?"/>
                 </div>
 
                 <div className = "category">
                     <h1>Categoria</h1>
-                    <select name = "Categoria"
-                            onChange = {(event)=>setCategory(event.target.value)}>
+                    <select name = "category"                         
+                            onChange = {(event)=>setCategory(event.target.value)}
+                            required>   
+                        <option value = "" >selecione</option>
                         <option value="Saude">Saude</option>
                         <option value="Educação">Educção</option>
                         <option value="Esporte">Esporte</option>
@@ -76,8 +83,10 @@ const Modal = ({close, filtered, page}) =>{
 
                 <div>
                     <h1>Frequecia</h1>
-                    <select name = "Frequencia"
-                            onChange = {(event)=>setFrequency(event.target.value)}>
+                    <select name = "frequency"
+                            onChange = {(event)=>setFrequency(event.target.value)}
+                            required>
+                        <option value = "" >selecione</option>
                         <option value="Diario">Diario</option>
                         <option value="Semanal">Semanal</option>
                         <option value="Quizenal">Quizenal</option>
@@ -87,8 +96,10 @@ const Modal = ({close, filtered, page}) =>{
                 
                 <div>
                     <h1>Dificuldade</h1>
-                    <select name = "dificuldade"
-                            onChange = {(event)=>setDifficulty(event.target.value)}>
+                    <select name = "difficulty"
+                            onChange = {(event)=>setDifficulty(event.target.value)}
+                            required>
+                        <option value = "" >selecione</option>
                         <option value="easy">easy</option>
                         <option value="Regular">Regular</option>
                         <option value="Hard">Hard</option>
@@ -102,14 +113,19 @@ const Modal = ({close, filtered, page}) =>{
             (<ConteinerForm onSubmit = {criarObjGrupos}>
 
                 <div className = "divTitle">
-                    <h1>Nome do grupo</h1>
-                    <input value = {title} onChange = {(event) => setTitle(event.target.value)}/>
+                    <h1 className = "nome">Crie Seu Grupo</h1>
+                    <input  value = {title} 
+                            onChange = {(event) => setTitle(event.target.value)}
+                            required
+                            placeholder = "Qual o nome do seu Grupo?"/>
                 </div>
 
                 <div className = "category">
                     <h1>Categoria</h1>
-                    <select name = "Categoria"
-                            onChange = {(event)=>setCategory(event.target.value)}>
+                    <select name = "category"
+                            onChange = {(event)=>setCategory(event.target.value)}
+                            required>
+                        <option value = "" >selecione</option>
                         <option value="Saude">Saude</option>
                         <option value="Educação">Educção</option>
                         <option value="Esporte">Esporte</option>
@@ -121,7 +137,8 @@ const Modal = ({close, filtered, page}) =>{
 
                 <div className = "divTitle">
                     <h1>Discrição</h1>
-                    <input  onChange = {(event) => setDiscretion(event.target.value)}/>
+                    <input  onChange = {(event) => setDiscretion(event.target.value)}
+                            required/>
                 </div>
                 <button type = "submt" >Criar</button>
 
@@ -132,13 +149,18 @@ const Modal = ({close, filtered, page}) =>{
                 (<ConteinerForm onSubmit = {criarObjAtividades}>
                 
                     <div className = "divTitle">
-                        <h1>Nome da atividade</h1>
-                        <input onChange = {(event) => setTitle(event.target.value)}/>
+                        <h1  className = "nome"> Crie sua nova atividade </h1>
+                        <input  onChange = {(event) => 
+                                setTitle(event.target.value)}
+                                required
+                                placeholder = "Qual a sua atividade?"/>
                     </div>
                 
                     <div >
                         <h1>Data</h1>
-                        <input  type = "date" onChange = {(event) => setData(event.target.value)}/>
+                        <input  type = "date" 
+                                onChange = {(event) => setData(event.target.value)}
+                                required/>
                     </div>
                 
                     <button type = "submt" >Criar</button>
@@ -151,13 +173,22 @@ const Modal = ({close, filtered, page}) =>{
                 (<ConteinerForm onSubmit = {criarObjMetas}>
                 
                     <div className = "divTitle">
-                        <h1>Nome da atividade</h1>
-                        <input onChange = {(event) => setTitle(event.target.value)}/>
+                        <h1 className = "nome" >Crie suas metas</h1>
+                        <input  onChange = {(event) => setTitle(event.target.value)}
+                                required
+                                placeholder = "Qual é sua meta?"/>
                     </div>
                 
-                    <div >
-                        <h1>Data</h1>
-                        <input  type = "date" onChange = {(event) => setData(event.target.value)}/>
+                    <div>
+                    <h1>Dificuldade</h1>
+                    <select name = "difficulty"
+                            onChange = {(event)=>setDifficulty(event.target.value)}
+                            required>
+                        <option value = "" >selecione</option>
+                        <option value="easy">easy</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Hard">Hard</option>
+                    </select>
                     </div>
                 
                     <button type = "submt" >Criar</button>
