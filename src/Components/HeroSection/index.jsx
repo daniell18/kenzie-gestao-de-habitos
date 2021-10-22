@@ -38,7 +38,7 @@ const HeroSection = () => {
         />
       </HeroBg>
       <HeroContent>
-        <HeroH1> Kenzie Habit </HeroH1>
+        <HeroH1> Kenzie Habbit </HeroH1>
         <HeroP>
           Crie sua conta hoje, para desenvolver e acompanhar seus habitos
           favoritos
