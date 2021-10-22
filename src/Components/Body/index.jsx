@@ -5,6 +5,7 @@ import {
   LogoSair,
   ParagrafoLogout,
   LogoutPage,
+  ButtonPlus,
   GoHome,
 } from "./Bodystyle";
 import { useHistory } from "react-router";
@@ -79,12 +80,12 @@ function Body({ color, pages, item }) {
         )}
         {pages !== "logout" ? (<GoHome onClick={() => history.push("/home")}> home </GoHome>) : (null)}
         {pages !== "logout" && pages !== "Members" ? (
-          <button
+          <ButtonPlus
             className="buttonPlus"
             onClick={() => setIsModalVisible(true)}
           >
             +
-          </button>
+          </ButtonPlus>
         ) : null}
         {isModalVisible ? (
           <Modal
