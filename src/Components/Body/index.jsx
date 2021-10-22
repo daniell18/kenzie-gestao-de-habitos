@@ -8,6 +8,7 @@ import {
   ButtonPlus,
   GoHome,
 } from "./Bodystyle";
+import { GoPlus, GoHome as GoHome1 } from "react-icons/go";
 import { useHistory } from "react-router";
 import { useContext, useEffect } from "react";
 import { LoginContext } from "../../Providers/Login";
@@ -84,14 +85,17 @@ function Body({ color, pages, item }) {
           </LogoutPage>
         )}
         {pages !== "logout" ? (
-          <GoHome onClick={() => history.push("/home")}> home </GoHome>
+          <GoHome onClick={() => history.push("/home")}>
+            {" "}
+            <GoHome1 />{" "}
+          </GoHome>
         ) : null}
         {pages !== "logout" && pages !== "Members" ? (
           <ButtonPlus
             className="buttonPlus"
             onClick={() => setIsModalVisible(true)}
           >
-            +
+            <GoPlus />
           </ButtonPlus>
         ) : null}
         {isModalVisible ? (
