@@ -14,7 +14,7 @@ function Member({ authenticated }) {
     <>
       <div>
         <Headers type="Group" group={group} />
-        <Body color="#4da7ad" page="Members" />
+        <Body color="#4da7ad" pages="Members" />
       </div>
     </>
   );

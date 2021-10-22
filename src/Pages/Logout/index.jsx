@@ -10,7 +10,7 @@ function Logout({ authenticated }) {
     <>
       <div>
         <Headers type="Perfil" />
-        <Body color="#E2B1B1" page="logout">
+        <Body color="#E2B1B1" pages="logout">
         </Body>
       </div>
     </>

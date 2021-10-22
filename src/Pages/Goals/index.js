@@ -14,7 +14,7 @@ function Goals({ authenticated }) {
     <>
       <div>
         <Headers type="Group" group={group} />
-        <Body color="#E2B1B1" page="goals" />
+        <Body color="#E2B1B1" pages="goals" />
       </div>
     </>
   );

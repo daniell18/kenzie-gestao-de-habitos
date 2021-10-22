@@ -11,6 +11,7 @@ export const LoginProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
   const [updateLogin, setUpdateLogin] = useState(false);
   const getLogin = (e) => {
+    setUpdateLogin(e)
     axios
       .post("https://kenzie-habits.herokuapp.com/sessions/", e)
       .then((Response) => {
@@ -43,7 +44,7 @@ export const LoginProvider = ({ children }) => {
           setSubscription(response.data);
         });
     }
-  }, [login,updateLogin]);
+  }, [login]);
   if (aux && subscription) {
     localStorage.setItem("@Kenziehabits:User", JSON.stringify(aux));
     localStorage.setItem(
@@ -54,7 +55,7 @@ export const LoginProvider = ({ children }) => {
   }
   return (
     <LoginContext.Provider
-      value={{ login, getLogin, aux, setAuthenticated, authenticated, setUpdateLogin }}
+      value={{ login, getLogin, aux, setAuthenticated, authenticated, updateLogin }}
     >
       {children}
     </LoginContext.Provider>

@@ -15,14 +15,13 @@ export const Conteiner = styled.div`
 
 export const ConteinerModal = styled.div`
     width: 80%;
-    height: 80%;
-    left: 0;
-    right: 0;
-    
+    height: 70%;
+    top: 0px;
     background-color: var(--purple3);
     opacity: inherit;
     border: solid 2px var(--black);
     border-radius: 10px;
+    position: fixed;
 
     .buttonClose{
        
@@ -97,6 +96,6 @@ export const ConteinerForm = styled.form`
         font-size: 20px;
         box-shadow: 2px 2px 5px 1px;
         position: fixed;
-        top: 77%;
+        top: 60%;
     }
 `;

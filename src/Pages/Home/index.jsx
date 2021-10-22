@@ -10,7 +10,7 @@ function Home({ authenticated }) {
     <>
       <div>
         <Headers type="Perfil" />
-        <Body color="#4da7ad" page="Habits" />
+        <Body color="#4da7ad" pages="Habits" />
       </div>
     </>
   );

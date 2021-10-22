@@ -15,7 +15,7 @@ function SpecificGroup({ authenticated }) {
     <>
       <div>
         <Headers type="Group" group={group} />
-        <Body color="#7e42c2" page="activities" />
+        <Body color="#7e42c2" pages="activities" />
       </div>
     </>
   );

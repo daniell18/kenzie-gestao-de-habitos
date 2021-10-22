@@ -11,7 +11,7 @@ function Groups({ authenticated }) {
     <>
       <div>
         <Headers type="Perfil" />
-        <Body color="#7e42c2" page="SubscriptionGroup" />
+        <Body color="#7e42c2" pages="SubscriptionGroup" />
       </div>
     </>
   );
