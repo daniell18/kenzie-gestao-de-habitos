@@ -11,7 +11,7 @@ export const Conteiner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-`
+`;
 
 export const ConteinerModal = styled.div`
     width: 80%;
@@ -23,7 +23,7 @@ export const ConteinerModal = styled.div`
     opacity: inherit;
     border: solid 2px var(--black);
     border-radius: 10px;
-        
+
     .buttonClose{
        
         background-color: var(--purple3);
@@ -32,10 +32,8 @@ export const ConteinerModal = styled.div`
         display: flex;
         border: 0;
         font-size: 20px;
-    }
-    
-    
-`
+    }   
+`;
 
 export const ConteinerForm = styled.form`
     display: flex;
@@ -101,5 +99,4 @@ export const ConteinerForm = styled.form`
         position: fixed;
         top: 77%;
     }
-    
-`
+`;

@@ -75,7 +75,7 @@ const Card = ({ filtered }) => {
             ) : (
               <div>
                 <p>{item.description}</p>
-                {!item.username && (
+                {item.users_on_group && (
                   <button onClick={() => handleClick(item)}>Ver mais</button>
                 )}
               </div>

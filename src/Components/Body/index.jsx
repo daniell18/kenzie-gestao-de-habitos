@@ -5,12 +5,12 @@ import {
   LogoSair,
   ParagrafoLogout,
   LogoutPage,
+  ButtonPlus,
 } from "./Bodystyle";
 import { useHistory } from "react-router";
 import { useContext } from "react";
 import { LoginContext } from "../../Providers/Login";
 import { HabitsContext } from "../../Providers/Habits";
-import { Button } from "../Headers/HeadersStyle";
 import { useState } from "react";
 import Modal from "../modal/modal";
 
@@ -45,7 +45,7 @@ function Body({ color, page, item }) {
             />{" "}
           </LogoutPage>
         )}
-        {page !== "logout" && page !== "Members"? (<button className = "buttonPlus" onClick = {() => setIsModalVisible(true)} >+</button>) : (null)}
+        {page !== "logout" && page !== "Members"? (<ButtonPlus className = "buttonPlus" onClick = {() => setIsModalVisible(true)} >+</ButtonPlus>) : (null)}
         {isModalVisible ? <Modal filtered = {filtered} page = {page} close = {setIsModalVisible}/> : null}
       </ContainerBody>
     </>

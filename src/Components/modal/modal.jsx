@@ -45,7 +45,7 @@ const Modal = ({close, filtered, page}) =>{
         event.preventDefault();
         obj.title = title;
         obj.difficulty = difficulty;
-        obj.how_much_achieved = 0;
+        obj.how_much_achieved = 1;
         obj.group = "id";
     }
 
