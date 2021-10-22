@@ -1,23 +1,35 @@
 import styled from "styled-components";
 
 export const LogoDesk = styled.img`
-display: none;
-@media screen and (min-width: 1024px){
-  display: block;
-  top: 25px;
-  position: absolute;
-  left:25px;
-}`;
+  display: none;
+  @media screen and (min-width: 1024px) {
+    display: block;
+    top: 25px;
+    position: absolute;
+    left: 25px;
+  }
+`;
 
 export const JoinGroup = styled.button`
   position: fixed;
   top: 110px;
   right: 50px;
-  @media screen and (min-width: 1024px){
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  &:hover {
+    color: white;
+    background-color: var(--purple3);
+  }
+
+  @media screen and (min-width: 1024px) {
     position: fixed;
     top: 155px;
     right: 50px;
-}
+  }
 `;
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -34,20 +46,18 @@ export const Icon = styled.img`
   width: 70px;
   height: 70px;
   border-radius: 100px;
-  @media screen and (min-width: 1024px){
+  @media screen and (min-width: 1024px) {
     position: absolute;
     right: 50px;
-    top: 25px;  
+    top: 25px;
   }
 `;
 
 export const ButtonEdit = styled.button`
-position: fixed;
-right: 350px;
+  position: fixed;
+  right: 350px;
 `;
-export const FormContainer = styled.form`
-
-`
+export const FormContainer = styled.form``;
 export const Button2 = styled.button`
   position: fixed;
   right: 350px;
@@ -96,7 +106,7 @@ export const Infos = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media screen and (min-width: 1024px){
+  @media screen and (min-width: 1024px) {
     position: fixed;
     right: 120px;
     top: 25px;

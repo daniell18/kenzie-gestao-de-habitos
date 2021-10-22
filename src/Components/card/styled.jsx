@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import check from "../../Images/24-approved-checked-outline.svg"
+import check from "../../Images/24-approved-checked-outline.svg";
 
 export const Conteiner = styled.div`
   width: 80%;
@@ -17,15 +17,15 @@ export const Conteiner = styled.div`
 `;
 
 export const CheckIn = styled.button`
-    border-radius: 50px;
-    width: 40px;
-    font-size: 10px;
+  border-radius: 50px;
+  width: 40px;
+  font-size: 10px;
 `;
 
 export const Delete = styled.button`
-    border-radius: 50px;
-    width: 40px;
-    font-size: 10px;
+  border-radius: 50px;
+  width: 40px;
+  font-size: 10px;
 `;
 
 export const ConteinerCard = styled.div`
@@ -77,4 +77,16 @@ export const Progress = styled.div`
       background-color: #444545;
     }
   } */
+`;
+export const ButtonSeeMore = styled.button`
+  width: 120px;
+  height: 25px;
+  border-radius: 10px;
+  margin-top: 3px;
+  border: none;
+  font-weight: 600;
+  &:hover {
+    color: white;
+    background-color: var(--purple3);
+  }
 `;

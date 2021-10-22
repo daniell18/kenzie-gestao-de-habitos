@@ -9,6 +9,7 @@ import {
   Progress,
   CheckIn,
   Delete,
+  ButtonSeeMore,
 } from "./styled";
 
 const Card = ({ filtered, getGroup, setSpecificGroup, setUpadteGoal }) => {
@@ -132,7 +133,9 @@ const Card = ({ filtered, getGroup, setSpecificGroup, setUpadteGoal }) => {
               <div>
                 <p>{item.description}</p>
                 {item.users_on_group && (
-                  <button onClick={() => handleClick(item)}>Ver mais</button>
+                  <ButtonSeeMore onClick={() => handleClick(item)}>
+                    Ver mais
+                  </ButtonSeeMore>
                 )}
               </div>
             )}

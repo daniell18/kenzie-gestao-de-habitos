@@ -23,7 +23,7 @@ function Headers({ type, group, page }) {
       {type === "Perfil" && (
         <HeaderContainer>
           <ContainerInfo>
-            <LogoDesk src={logoLogin}/>
+            <LogoDesk src={logoLogin} />
             <Icon src="https://picsum.photos/200" alt="icon" />
             <Infos>
               <p>#id:{user.id}</p>
@@ -49,19 +49,16 @@ function Headers({ type, group, page }) {
       {type === "Group" && (
         <HeaderContainer>
           <ContainerInfo>
-          <LogoDesk
-          onClick={() => history.push("/home")}
-          src={logoLogin}/>
-            <Icon
-              src="https://picsum.photos/200"
-              alt="icon"
-            />
+            <LogoDesk onClick={() => history.push("/home")} src={logoLogin} />
+            <Icon src="https://picsum.photos/200" alt="icon" />
             <Infos>
               <p>#id:{group[0].id}</p>
               <p>{group[0].name}</p>
             </Infos>
           </ContainerInfo>
-          <JoinGroup onClick={() => history.push("/home")}> juntar-se </JoinGroup>
+          <JoinGroup onClick={() => history.push("/groups")}>
+            Participe
+          </JoinGroup>
           <NavMenu>
             <NavHome onClick={() => history.push("/member")}>
               <p>Membros</p>
