@@ -1,7 +1,6 @@
 import { GroupProvider } from "./Providers/Groups";
 import { HabitsProvider } from "./Providers/Habits";
 import { LoginProvider } from "./Providers/Login";
-import { SpecificGroupProvider } from "./Providers/SpecificGroup";
 
 import Routes from "./Routes/index";
 import Global from "./Styles/Global";
