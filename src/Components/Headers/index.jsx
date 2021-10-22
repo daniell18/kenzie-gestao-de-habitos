@@ -10,9 +10,10 @@ import {
   NavMenu,
   ContainerInfo,
   LogoDesk,
+  JoinGroup,
 } from "./HeadersStyle";
 
-function Headers({ type, group }) {
+function Headers({ type, group, page }) {
   const user = JSON.parse(localStorage.getItem("@Kenziehabits:User")) || "";
 
   const history = useHistory();
@@ -60,6 +61,7 @@ function Headers({ type, group }) {
               <p>{group[0].name}</p>
             </Infos>
           </ContainerInfo>
+          <JoinGroup onClick={() => history.push("/home")}> juntar-se </JoinGroup>
           <NavMenu>
             <NavHome onClick={() => history.push("/member")}>
               <p>Membros</p>

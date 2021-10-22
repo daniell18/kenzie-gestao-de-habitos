@@ -9,6 +9,16 @@ display: none;
   left:25px;
 }`;
 
+export const JoinGroup = styled.button`
+  position: fixed;
+  top: 110px;
+  right: 50px;
+  @media screen and (min-width: 1024px){
+    position: fixed;
+    top: 155px;
+    right: 50px;
+}
+`;
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 20vh;
