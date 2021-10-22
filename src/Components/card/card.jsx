@@ -6,7 +6,10 @@ import {
   ProgressBar,
   Conteinername,
   Progress,
+  CheckIn,
+  Delete,
 } from "./styled";
+
 
 const Card = ({ filtered }) => {
   const [specificGroup, setSpecificGroup] = useState(-1);
@@ -53,7 +56,8 @@ const Card = ({ filtered }) => {
     <>
       {filtered.map((item, index) => (
         <Conteiner key={index} color={color}>
-          icon
+          <CheckIn> Check </CheckIn>
+          <Delete> Delete </Delete>
           <ConteinerCard>
             <Conteinername>
               {item.title ? <p>{item.title}</p> : <p>{item.name}</p>}

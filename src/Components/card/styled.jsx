@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import check from "../../Images/24-approved-checked-outline.svg"
 
 export const Conteiner = styled.div`
   width: 80%;
@@ -13,6 +14,18 @@ export const Conteiner = styled.div`
   @media screen and (min-width: 800px) {
     width: 40%;
   }
+`;
+
+export const CheckIn = styled.button`
+    border-radius: 50px;
+    width: 40px;
+    font-size: 10px;
+`;
+
+export const Delete = styled.button`
+    border-radius: 50px;
+    width: 40px;
+    font-size: 10px;
 `;
 
 export const ConteinerCard = styled.div`
