@@ -128,6 +128,8 @@ const Card = ({
               {console.log(item)}
               {item.title && item.frequency ? (
                 <CheckIn onClick={() => handleUp(item)}> Check </CheckIn>
+              ) : item.group && item.difficulty ? (
+                <CheckIn onClick={() => handleUp(item)}> Check </CheckIn>
               ) : null}
               {!item.username && (
                 <Delete onClick={() => handleDel(item)}> Delete </Delete>
