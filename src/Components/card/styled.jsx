@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import check from "../../Images/24-approved-checked-outline.svg"
+import check from "../../Images/24-approved-checked-outline.svg";
 
 export const Conteiner = styled.div`
-  width: 80%;
+  width: 40vw;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -12,20 +12,40 @@ export const Conteiner = styled.div`
   padding: 10px;
   color: white;
   @media screen and (min-width: 800px) {
-    width: 40%;
+    width: 40vw;
   }
 `;
-
+export const Conteinerfull = styled.div`
+  width: 30vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #212324;
+  margin-top: 2vh;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  @media screen and (min-width: 800px) {
+    width: 40vw;
+  }
+`;
+export const ContainerGroups = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: center;
+`;
 export const CheckIn = styled.button`
-    border-radius: 50px;
-    width: 40px;
-    font-size: 10px;
+  border-radius: 50px;
+  width: 40px;
+  font-size: 10px;
 `;
 
 export const Delete = styled.button`
-    border-radius: 50px;
-    width: 40px;
-    font-size: 10px;
+  border-radius: 50px;
+  width: 40px;
+  font-size: 10px;
 `;
 
 export const ConteinerCard = styled.div`
