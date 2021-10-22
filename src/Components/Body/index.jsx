@@ -17,13 +17,13 @@ function Body({ color, page, item }) {
 
   const filtered =
     JSON.parse(localStorage.getItem(`@Kenziehabits:${page}`)) || [];
- 
+
   return (
     <>
       <ContainerBody color={color}>
         <Card filtered={filtered} />
         {page === "logout" && <LogoutPage> <LogoSair /> <ParagrafoLogout>Voce dejesa sair?</ParagrafoLogout> <Sair onClick={() => {localStorage.clear(); history.push("/"); setAuthenticated(false); setHabitsUpdate(false); setPage(1); setHabits([])}} /> </LogoutPage>}
-        <Button onClick = {() => setIsModalVisible(true)} >criar mais </Button>
+        {page !== "logout" && page !== "Members"? (<button className = "buttonPlus" onClick = {() => setIsModalVisible(true)} >+</button>) : (null)}
         {isModalVisible ? <Modal filtered = {filtered} page = {page} close = {setIsModalVisible}/> : null}
       </ContainerBody>
     </>

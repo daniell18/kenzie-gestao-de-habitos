@@ -11,6 +11,21 @@ export const ContainerBody = styled.div`
   background-color: ${(props) => props.color};
   margin-top: 20vh;
   padding-top: 6vh;
+
+  .buttonPlus{
+    width:60px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 41px;
+    text-align: center;
+    border: 0;
+    background-color: var(--purple1);
+    color: var(--white);
+    font-weight:600;
+    position: fixed;
+    top: 88%;
+    left: 80%;
+  }
 `;
 export const ParagrafoLogout = styled.p`
     text-align: center;
