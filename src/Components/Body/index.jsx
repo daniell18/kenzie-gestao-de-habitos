@@ -26,6 +26,7 @@ function Body({ color, page, item }) {
   return (
     <>
       <ContainerBody color={color}>
+        <Card filtered={filtered} />
         {page === "logout" && (
           <LogoutPage>
             {" "}
