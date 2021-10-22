@@ -72,6 +72,9 @@ function Headers({ type, group, page }) {
               </JoinGroup>
             )}
           </ContainerInfo>
+          <JoinGroup onClick={() => history.push("/groups")}>
+            Participe
+          </JoinGroup>
           <NavMenu>
             <NavHome onClick={() => history.push("/member")}>
               <p>Membros</p>

@@ -98,3 +98,15 @@ export const Progress = styled.div`
     }
   } */
 `;
+export const ButtonSeeMore = styled.button`
+  width: 120px;
+  height: 25px;
+  border-radius: 10px;
+  margin-top: 3px;
+  border: none;
+  font-weight: 600;
+  &:hover {
+    color: white;
+    background-color: var(--purple3);
+  }
+`;

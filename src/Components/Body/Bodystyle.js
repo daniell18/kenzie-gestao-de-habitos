@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import sair from "../../Images/1725-exit-sign-outline.svg"
-import logo3 from "../../Images/logo.svg"
+import sair from "../../Images/1725-exit-sign-outline.svg";
+import logo3 from "../../Images/logo.svg";
 
 export const ContainerBody = styled.div`
   width: 100%;
@@ -13,66 +13,97 @@ export const ContainerBody = styled.div`
   padding-top: 6vh;
 `;
 export const ParagrafoLogout = styled.p`
-    text-align: center;
-    color: white;
-    margin-bottom:70px;
-    font-size: x-large;
-    font-weight: 600;
+  text-align: center;
+  color: white;
+  margin-bottom: 70px;
+  font-size: x-large;
+  font-weight: 600;
 `;
 
-export const ButtonPlus = styled.button `
+export const ButtonPlus = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 6px black;
+  background-color: #2096f3;
+  font-size: 2rem;
   width: 50px;
   height: 50px;
   position: fixed;
   bottom: 60px;
   border: none;
   right: 35px;
-  border-radius: 125px;
-@media screen and (min-width: 1024px) {
-  width: 70px;
-  height: 70px;
-  position: fixed;
-  bottom: 100px;
-  right: 170px;
-  border-radius: 125px;}
-@media screen and (min-width: 1440px) {
-  width: 70px;
-  height: 70px;
-  position: fixed;
-  bottom: 100px;
-  right: 310px;
-  border-radius: 125px;}
+  border-radius: 50%;
+  color: white;
+
+  &:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 100px;
+    right: 170px;
+    border-radius: 125px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 100px;
+    right: 310px;
+    border-radius: 125px;
+  }
 `;
 
 export const GoHome = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 6px black;
+  background-color: #2096f3;
+  color: var(--white);
+  font-size: 2rem;
   width: 50px;
   height: 50px;
   position: fixed;
   bottom: 60px;
   border: none;
   left: 35px;
-  border-radius: 125px;
-@media screen and (min-width: 1024px) {
-  width: 70px;
-  height: 70px;
-  position: fixed;
-  bottom: 100px;
-  left: 170px;
-  border-radius: 125px;}
-@media screen and (min-width: 1440px) {
-  width: 70px;
-  height: 70px;
-  position: fixed;
-  bottom: 100px;
-  left: 310px;
-  border-radius: 125px;}
+  border-radius: 50%;
+
+  &:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 100px;
+    left: 170px;
+    border-radius: 125px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 100px;
+    left: 310px;
+    border-radius: 125px;
+  }
 `;
 
 export const LogoutPage = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 110px;
 `;
 
 export const Sair = styled.button`
@@ -84,8 +115,8 @@ export const Sair = styled.button`
 `;
 
 export const LogoSair = styled.div`
-    width: 320px;
-    margin-bottom:30px;
-    height: 100px;
+  width: 320px;
+  margin-bottom: 30px;
+  height: 100px;
   background-image: url(${logo3});
 `;

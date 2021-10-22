@@ -9,6 +9,7 @@ import {
   Progress,
   CheckIn,
   Delete,
+  ButtonSeeMore,
   ContainerGroups,
   Conteinerfull,
 } from "./styled";
@@ -154,9 +155,9 @@ const Card = ({
                   <div>
                     <p>{item.description}</p>
                     {item.users_on_group && (
-                      <button onClick={() => handleClick(item)}>
+                      <ButtonSeeMore onClick={() => handleClick(item)}>
                         Ver mais
-                      </button>
+                      </ButtonSeeMore>
                     )}
                   </div>
                 )}
@@ -184,7 +185,9 @@ const Card = ({
                 <Conteinerfull>
                   <ConteinerCard>
                     <p>{item.name}</p>
-                    <button onClick={() => handleClick(item)}>Ver mais</button>
+                    <ButtonSeeMore onClick={() => handleClick(item)}>
+                      Ver mais
+                    </ButtonSeeMore>
                   </ConteinerCard>
                 </Conteinerfull>
               ))}

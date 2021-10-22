@@ -14,6 +14,17 @@ export const JoinGroup = styled.button`
   position: fixed;
   top: 70px;
   right: 50px;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  &:hover {
+    color: white;
+    background-color: var(--purple3);
+  }
+
   @media screen and (min-width: 1024px) {
     position: fixed;
     top: 105px;
