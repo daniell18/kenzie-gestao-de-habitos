@@ -58,7 +58,8 @@ const Modal = ({
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((_) => {
+      .then((response) => {
+        console.log(response);
         getLogin(updateLogin);
       });
   };
