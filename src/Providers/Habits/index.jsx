@@ -26,7 +26,7 @@ export const HabitsProvider = ({ children }) => {
   }
 
   return (
-    <HabitsContext.Provider value={{ habits, page, filtered, setHabitsUpdate }}>
+    <HabitsContext.Provider value={{ habits, page, filtered, setHabitsUpdate, setPage, setHabits }}>
       {children}
     </HabitsContext.Provider>
   );

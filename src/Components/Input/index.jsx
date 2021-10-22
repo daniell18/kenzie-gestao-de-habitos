@@ -1,4 +1,4 @@
-import { InputItem, ErrorSpan } from "./styles";
+import { InputItem} from "./styles";
 
 const Input = ({ placeholder, error, register, name, ...rest }) => {
   return register ? (

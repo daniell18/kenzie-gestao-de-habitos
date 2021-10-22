@@ -1,5 +1,4 @@
 import { useHistory } from "react-router";
-import { IoPersonAdd } from "react-icons/io5";
 import {
   HeaderContainer,
   Icon,
@@ -9,7 +8,6 @@ import {
   NavLogout,
   NavMenu,
   ContainerInfo,
-  Button,
 } from "./HeadersStyle";
 
 function Headers({ type, group }) {
