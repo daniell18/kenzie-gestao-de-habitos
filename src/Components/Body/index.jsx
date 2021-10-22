@@ -19,7 +19,7 @@ function Body({ color, pages, item }) {
   const history = useHistory();
   const { setAuthenticated } = useContext(LoginContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [updataAct, setUpdateAct] = useState(false);
+  const [setUpdateAct] = useState(false);
   const filtered =
     JSON.parse(localStorage.getItem(`@Kenziehabits:${pages}`)) || [];
   const [specificGroup, setSpecificGroup] = useState(-1);
