@@ -1,4 +1,5 @@
 import { useHistory } from "react-router";
+import logoLogin from "../../Images/logo.svg";
 import {
   HeaderContainer,
   Icon,
@@ -8,6 +9,7 @@ import {
   NavLogout,
   NavMenu,
   ContainerInfo,
+  LogoDesk,
 } from "./HeadersStyle";
 
 function Headers({ type, group }) {
@@ -20,6 +22,7 @@ function Headers({ type, group }) {
       {type === "Perfil" && (
         <HeaderContainer>
           <ContainerInfo>
+            <LogoDesk src={logoLogin}/>
             <Icon src="https://picsum.photos/200" alt="icon" />
             <Infos>
               <p>#id:{user.id}</p>

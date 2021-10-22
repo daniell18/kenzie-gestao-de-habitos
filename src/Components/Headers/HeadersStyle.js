@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const LogoDesk = styled.img`
+display: none;
+@media screen and (min-width: 1024px){
+  display: block;
+  top: 25px;
+  position: absolute;
+  left:25px;
+}`;
+
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 20vh;
@@ -15,6 +24,11 @@ export const Icon = styled.img`
   width: 70px;
   height: 70px;
   border-radius: 100px;
+  @media screen and (min-width: 1024px){
+    position: absolute;
+    right: 50px;
+    top: 25px;  
+  }
 `;
 
 export const ButtonEdit = styled.button`
@@ -72,6 +86,11 @@ export const Infos = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media screen and (min-width: 1024px){
+    position: fixed;
+    right: 120px;
+    top: 25px;
+  }
 `;
 export const NavMenu = styled.div`
   display: flex;
