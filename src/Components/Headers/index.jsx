@@ -16,17 +16,38 @@ import {
 
 function Headers({ type, group, page }) {
   const groupsub =
-    JSON.parse(localStorage.getItem("@Kenziehabits:SpecificGroup")) || "";
+    JSON.parse(localStorage.getItem("@Kenziehabits:SpecificGroup")) ;
+    let subGroup=JSON.parse(localStorage.getItem("@Kenziehabits:SubscriptionGroup")) ;
   const user = JSON.parse(localStorage.getItem("@Kenziehabits:User")) || "";
   const token = JSON.parse(localStorage.getItem("@Kenziehabits:token"));
-
+let attButton=false
   const history = useHistory();
+  if(groupsub){
+    if(groupsub[0].users_on_group.find((item)=>item.id===user.id)){
+      attButton=true
+    }
+  
+  }
+  const handleUnSub=()=>{
+    axios.delete(`https://kenzie-habits.herokuapp.com/groups/${groupsub[0].id}/unsubscribe/`,{
+      headers: { Authorization: `Bearer ${token}` },
+    }).then((_)=>{
+      let aux=subGroup.filter((item)=>item.id!==groupsub[0].id)
+      localStorage.setItem("@Kenziehabits:SubscriptionGroup",JSON.stringify(aux))
+        history.push("/groups")
+    })
+  }
   const handleSub = (id) => {
+    console.log("teste")
     axios
-      .post(`https://kenzie-habits.herokuapp.com/groups/${id}/subscribe/`, {
+      .post(`https://kenzie-habits.herokuapp.com/groups/${id}/subscribe/`,null, {
         headers: { Authorization: `Bearer ${token}` },
       })
-      .then((response) => console.log(response));
+      .then((response) => {
+        console.log(response.data)
+        subGroup.push(groupsub[0])
+        localStorage.setItem("@Kenziehabits:SubscriptionGroup",JSON.stringify(subGroup))
+        history.push("/groups")});
   };
   return (
     <>
@@ -64,17 +85,12 @@ function Headers({ type, group, page }) {
               <p>#id:{group[0].id}</p>
               <p>{group[0].name}</p>
             </Infos>
-            {groupsub[0].users_on_group.find((item) => item.id === user.id) ? (
-              <JoinGroup>Deixar o grupo</JoinGroup>
-            ) : (
-              <JoinGroup onClick={() => handleSub(groupsub[0].id)}>
-                juntar-se
-              </JoinGroup>
-            )}
+            {attButton&&<JoinGroup onClick={()=>handleUnSub()}>Desinscrever-se</JoinGroup>}
+            {!attButton&& <JoinGroup onClick={() => handleSub(groupsub[0].id)}>
+                Inscrever-se
+              </JoinGroup>}
           </ContainerInfo>
-          <JoinGroup onClick={() => history.push("/groups")}>
-            Participe
-          </JoinGroup>
+       
           <NavMenu>
             <NavHome onClick={() => history.push("/member")}>
               <p>Membros</p>

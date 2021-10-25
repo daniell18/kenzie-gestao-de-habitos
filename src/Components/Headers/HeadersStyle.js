@@ -14,7 +14,7 @@ export const JoinGroup = styled.button`
   position: fixed;
   top: 70px;
   right: 50px;
-  width: 90px;
+  width: 150px;
   height: 30px;
   line-height: 30px;
   font-weight: 600;
@@ -27,8 +27,8 @@ export const JoinGroup = styled.button`
 
   @media screen and (min-width: 1024px) {
     position: fixed;
-    top: 105px;
-    right: 50px;
+    top: 75px;
+    right: 150px;
   }
 `;
 export const HeaderContainer = styled.div`

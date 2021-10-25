@@ -1,32 +1,30 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext } from "react";
 export const HabitsContext = createContext([]);
 
 export const HabitsProvider = ({ children }) => {
-  const [habits, setHabits] = useState([]);
-  const [page, setPage] = useState(1);
-  let filtered;
-  let idUser = JSON.parse(localStorage.getItem("@Kenziehabits:User")) || -99;
-  const [habitsUpdate, setHabitsUpdate] = useState(false);
-  useEffect(() => {
-    idUser = JSON.parse(localStorage.getItem("@Kenziehabits:User")) || -99;
-    axios
-      .get(`https://kenzie-habits.herokuapp.com/habits/?page=${page}`)
-      .then((response) => {
-        setHabits([...habits, ...response.data.results]);
-        if (response.next !== null) {
-          setPage(page + 1);
-        }
-      });
-  }, [page, habitsUpdate]);
 
-  if (page > 1 && idUser !== -99) {
-    filtered = habits.filter((item) => item.user === idUser.id);
-    localStorage.setItem("@Kenziehabits:Habits", JSON.stringify(filtered));
+  let token = JSON.parse(localStorage.getItem("@Kenziehabits:token"));
+ 
+
+  const newHabit=(setFiltered)=>{
+    console.log(token)
+   axios.get("https://kenzie-habits.herokuapp.com/habits/personal/",{
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((response)=>{
+    setFiltered(response.data)
+    localStorage.setItem("@Kenziehabits:Habits",JSON.stringify(response.data))
+  })
   }
-
+  const removeHabit=(id,filtered,setFiltered)=>{
+    let aux=filtered.filter((item)=>item.id!==id)
+    setFiltered(aux)
+    localStorage.setItem("@Kenziehabits:Habits",JSON.stringify(aux))
+  }
   return (
-    <HabitsContext.Provider value={{ habits, page, filtered, setHabitsUpdate, setPage, setHabits }}>
+    <HabitsContext.Provider value={{ newHabit,removeHabit }}>
       {children}
     </HabitsContext.Provider>
   );

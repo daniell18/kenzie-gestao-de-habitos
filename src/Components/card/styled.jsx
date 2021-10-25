@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import check from "../../Images/24-approved-checked-outline.svg";
+
 
 export const Conteiner = styled.div`
   width: 40vw;

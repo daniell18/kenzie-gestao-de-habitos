@@ -16,17 +16,17 @@ import { HabitsContext } from "../../Providers/Habits";
 import { useState } from "react";
 import Modal from "../modal/modal";
 function Body({ color, pages, item }) {
-  const { setHabitsUpdate, setPage, setHabits } = useContext(HabitsContext);
+  const {  setPage, setHabits } = useContext(HabitsContext);
   const history = useHistory();
   const { setAuthenticated } = useContext(LoginContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [setUpdateAct] = useState(false);
-  const filtered =
-    JSON.parse(localStorage.getItem(`@Kenziehabits:${pages}`)) || [];
+  const [filtered,setFiltered] =useState(
+    JSON.parse(localStorage.getItem(`@Kenziehabits:${pages}`)) || [])
   const filteredGroups =
     JSON.parse(localStorage.getItem(`@Kenziehabits:Groups`)) || [];
   const [specificGroup, setSpecificGroup] = useState(-1);
-  const [updateGoal, setUpadteGoal] = useState(false);
+  const [ setUpadteGoal] = useState(false);
   let id2 = JSON.parse(localStorage.getItem("@Kenziehabits:SpecificGroup"));
   const getGroup = (id) => {
     fetch(`https://kenzie-habits.herokuapp.com/groups/${id}/`)
@@ -73,6 +73,7 @@ function Body({ color, pages, item }) {
             filtered={filtered}
             filteredGroups={filteredGroups}
             getGroup={getGroup}
+            setFiltered={setFiltered}
           />
         ) : (
           <Card
@@ -80,6 +81,7 @@ function Body({ color, pages, item }) {
             setUpadteGoal={setUpadteGoal}
             filtered={filtered}
             getGroup={getGroup}
+            setFiltered={setFiltered}
           />
         )}
         {pages === "logout" && (
@@ -90,7 +92,7 @@ function Body({ color, pages, item }) {
                 localStorage.clear();
                 history.push("/");
                 setAuthenticated(false);
-                setHabitsUpdate(false);
+                
                 setPage(1);
                 setHabits([]);
               }}
@@ -119,6 +121,7 @@ function Body({ color, pages, item }) {
             filtered={filtered}
             pages={pages}
             close={setIsModalVisible}
+            setFiltered={setFiltered}
           />
         ) : null}
       </ContainerBody>

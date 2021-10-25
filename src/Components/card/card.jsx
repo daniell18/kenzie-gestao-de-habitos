@@ -17,29 +17,39 @@ import {
 const Card = ({
   filtered,
   getGroup,
-  setSpecificGroup,
-  setUpadteGoal,
+ 
   filteredGroups,
+  setFiltered
 }) => {
   const color = "black";
-  const { setHabitsUpdate, setPage, setHabits } = useContext(HabitsContext);
+  const { removeHabit } = useContext(HabitsContext);
   const token = JSON.parse(localStorage.getItem("@Kenziehabits:token"));
   const [filteredCat, setFilteredCat] = useState([]);
+  let aux=[]
   const handleClick = (e) => {
     if (e.name) {
       getGroup(e.id);
     }
   };
   const handleDel = (item) => {
+    if(item.users_on_group){
+      axios
+        .delete(`https://kenzie-habits.herokuapp.com/groups/${item.id}/unsubscribe/`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((_) => {
+          let aux=filtered.filter((e)=>e.id!==item.id)
+          setFiltered(aux)
+          localStorage.setItem("@Kenziehabits:SubscriptionGroup",JSON.stringify(aux))
+        });
+    }
     if (item.user) {
       axios
         .delete(`https://kenzie-habits.herokuapp.com/habits/${item.id}/`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((_) => {
-          setHabitsUpdate(false);
-          setHabits([]);
-          setPage(1);
+          removeHabit(item.id,filtered,setFiltered)
         });
     }
     if (item.realization_time) {
@@ -48,8 +58,9 @@ const Card = ({
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((_) => {
-          setSpecificGroup(2);
-          setUpadteGoal(true);
+          let aux=filtered.filter((e)=>e.id!==item.id)
+          setFiltered(aux)
+          localStorage.setItem("@Kenziehabits:activities",JSON.stringify(aux))
         });
     }
     if (item.group && item.difficulty) {
@@ -58,8 +69,9 @@ const Card = ({
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((_) => {
-          setSpecificGroup(2);
-          setUpadteGoal(true);
+          let aux=filtered.filter((e)=>e.id!==item.id)
+          setFiltered(aux)
+          localStorage.setItem("@Kenziehabits:goals",JSON.stringify(aux))
         });
     }
   };
@@ -89,10 +101,15 @@ const Card = ({
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
-          console.log(response);
-          setHabitsUpdate(false);
-          setHabits([]);
-          setPage(1);
+          filtered.forEach((element,index) => {
+              aux.push(element)
+            if(element.id===item.id){
+              if(element.how_much_achieved<100){
+                aux[index].how_much_achieved+=10
+              }
+            }
+            setFiltered(aux)
+          });
         });
     }
     if (item.group && item.difficulty) {
@@ -112,9 +129,15 @@ const Card = ({
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
-          console.log(response);
-          setSpecificGroup(2);
-          setUpadteGoal(true);
+          filtered.forEach((element,index) => {
+            aux.push(element)
+          if(element.id===item.id){
+            if(element.how_much_achieved<100){
+              aux[index].how_much_achieved+=10
+            }
+          }
+          setFiltered(aux)
+        });
         });
     }
   };

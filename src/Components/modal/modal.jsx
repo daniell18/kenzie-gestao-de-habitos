@@ -2,14 +2,13 @@ import { Conteiner, ConteinerModal, ConteinerForm } from "./style";
 import { useContext, useState } from "react";
 import { HabitsContext } from "../../Providers/Habits";
 import axios from "axios";
-import { LoginContext } from "../../Providers/Login";
+
 const Modal = ({
   close,
   filtered,
   pages,
-  setUpdateAct,
-  setUpadteGoal,
-  setSpecificGroup,
+
+  setFiltered
 }) => {
   const [category, setCategory] = useState("");
   const [frequency, setFrequency] = useState("");
@@ -17,11 +16,11 @@ const Modal = ({
   const [title, setTitle] = useState("");
   const [discretion, setDiscretion] = useState("");
   const [data, setData] = useState("");
-  const { setHabitsUpdate, setPage, setHabits } = useContext(HabitsContext);
-  const { updateLogin } = useContext(LoginContext);
+  const { newHabit } = useContext(HabitsContext);
+
   const token = JSON.parse(localStorage.getItem("@Kenziehabits:token"));
   const userID = JSON.parse(localStorage.getItem("@Kenziehabits:User"));
-  const { getLogin } = useContext(LoginContext);
+  
   const obj = {};
   const [idGroup] = useState(
     JSON.parse(localStorage.getItem("@Kenziehabits:SpecificGroup"))
@@ -42,9 +41,7 @@ const Modal = ({
         },
       })
       .then((_) => {
-        setHabitsUpdate(false);
-        setHabits([]);
-        setPage(1);
+        newHabit(setFiltered)
       });
   };
   const criarObjGrupos = (event) => {
@@ -59,8 +56,9 @@ const Modal = ({
         },
       })
       .then((response) => {
-        console.log(response);
-        getLogin(updateLogin);
+        filtered.push(response.data)
+        localStorage.setItem("@Kenziehabits:SubscriptionGroup",JSON.stringify(filtered))
+     
       });
   };
   const criarObjAtividades = (event) => {
@@ -75,8 +73,8 @@ const Modal = ({
         },
       })
       .then((response) => {
-        console.log(response);
-        setSpecificGroup(2);
+        filtered.push(response.data)
+        localStorage.setItem("@Kenziehabits:activities",JSON.stringify(filtered))
       });
   };
   const criarObjMetas = (event) => {
@@ -92,7 +90,8 @@ const Modal = ({
         },
       })
       .then((response) => {
-        setSpecificGroup(2);
+        filtered.push(response.data)
+        localStorage.setItem("@Kenziehabits:activities",JSON.stringify(filtered))
       });
   };
   return (
