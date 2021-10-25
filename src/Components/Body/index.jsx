@@ -12,11 +12,11 @@ import { GoPlus, GoHome as GoHome1 } from "react-icons/go";
 import { useHistory } from "react-router";
 import { useContext, useEffect } from "react";
 import { LoginContext } from "../../Providers/Login";
-import { HabitsContext } from "../../Providers/Habits";
+
 import { useState } from "react";
 import Modal from "../modal/modal";
 function Body({ color, pages, item }) {
-  const {  setPage, setHabits } = useContext(HabitsContext);
+
   const history = useHistory();
   const { setAuthenticated } = useContext(LoginContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -94,8 +94,7 @@ function Body({ color, pages, item }) {
                 history.push("/");
                 setAuthenticated(false);
                 localStorage.removeItem("@Kenziehabits:token")
-                setPage(1);
-                setHabits([]);
+                
               }}
             />
           </LogoutPage>

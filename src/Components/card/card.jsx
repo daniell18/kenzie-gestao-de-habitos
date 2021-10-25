@@ -108,8 +108,11 @@ const Card = ({
                 aux[index].how_much_achieved+=10
               }
             }
-            setFiltered(aux)
+            console.log(aux)
+           
           });
+          localStorage.setItem("@Kenziehabits:Habits",JSON.stringify(aux))
+          setFiltered(aux)
         });
     }
     if (item.group && item.difficulty) {
@@ -136,8 +139,10 @@ const Card = ({
               aux[index].how_much_achieved+=10
             }
           }
-          setFiltered(aux)
+          
         });
+        localStorage.setItem("@Kenziehabits:goals",JSON.stringify(aux))
+        setFiltered(aux)
         });
     }
   };
