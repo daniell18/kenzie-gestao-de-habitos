@@ -93,7 +93,7 @@ function Body({ color, pages, item }) {
                 localStorage.clear();
                 history.push("/");
                 setAuthenticated(false);
-                
+                localStorage.removeItem("@Kenziehabits:token")
                 setPage(1);
                 setHabits([]);
               }}
