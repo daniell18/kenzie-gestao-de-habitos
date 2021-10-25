@@ -9,24 +9,24 @@ import {
   FormContainer,
   InputItem,
   Logo,
+  Logo2,
   Paragrafo,
 } from "./styles";
 import logoLogin from "../../Images/logoLogin.svg";
+import logo from "../../Images/logo.svg";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import { Redirect, useHistory } from "react-router";
 import { useContext } from "react";
 import { LoginContext } from "../../Providers/Login";
-import Input from "../../Components/Input";
-import { SubscriptionContext } from "../../Providers/Subscripitons";
-import { HabitsContext } from "../../Providers/Habits";
 
-function Login({ auth, setAuth }) {
+import { GroupContext } from "../../Providers/Groups";
+
+function Login({ authenticated }) {
   const { getLogin } = useContext(LoginContext);
-  const { setAux } = useContext(SubscriptionContext);
-  const { setHabitsUpdate } = useContext(HabitsContext);
+  const { setUpdate } = useContext(GroupContext);
+ 
   const schema = yup.object().shape({
     username: yup.string().required("Campo obrigatório"),
     password: yup.string().required("Campo obrigatório"),
@@ -40,18 +40,19 @@ function Login({ auth, setAuth }) {
   const history = useHistory();
   const submitForm = (e) => {
     getLogin(e);
-    setHabitsUpdate(true);
-    setAux(true);
+    
+    setUpdate(true);
   };
 
-  if (auth) {
-    return <Redirect to="/" />;
+  if (authenticated) {
+    return <Redirect to="/home" />;
   }
 
   return (
     <>
       <Container>
         <Logo onClick={() => history.push("/")} src={logoLogin} />
+        <Logo2 onClick={() => history.push("/")} src={logo} />
         <Content>
           <FormContainer onSubmit={handleSubmit(submitForm)}>
             <h1>Login</h1>

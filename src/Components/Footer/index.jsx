@@ -26,11 +26,15 @@ const Footer = () => {
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle> Linkedin </FooterLinkTitle>
-              <SocialIconLink href="/" target="_blank" aria-label="Eric">
+              <FooterLinkTitle> Contato </FooterLinkTitle>
+              <SocialIconLink href="/" target="_blank" aria-label="Daniel">
                 Daniel Francisco
               </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="Gustavo">
+              <SocialIconLink
+                href="https://www.facebook.com/Ivan.Rowlands.de.Macedo"
+                target="_blank"
+                aria-label="Ivan"
+              >
                 Ivan Rowlands
               </SocialIconLink>
               <SocialIconLink
@@ -40,7 +44,7 @@ const Footer = () => {
               >
                 Smilly Aguilar
               </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="Rodrigo">
+              <SocialIconLink href="/" target="_blank" aria-label="Willian">
                 Willian Gustavo
               </SocialIconLink>
             </FooterLinkItems>

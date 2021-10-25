@@ -15,6 +15,8 @@ export const homeObjOne = {
   primary: false,
   darkText: false,
   topLineText: true,
+  btnLink: "signup",
+  btnLinkR: false,
 };
 
 export const homeObjTwo = {
@@ -34,6 +36,8 @@ export const homeObjTwo = {
   primary: true,
   darkText: false,
   topLineText: false,
+  btnLink: "services",
+  btnLinkR: false,
 };
 
 export const homeObjThree = {
@@ -53,4 +57,6 @@ export const homeObjThree = {
   primary: true,
   darkText: false,
   topLineText: false,
+  btnLink: "/register",
+  btnLinkR: true,
 };

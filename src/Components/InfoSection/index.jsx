@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ButtonElement";
+import { Button, ButtonR } from "../ButtonElement";
 
 import {
   BtnWrap,
@@ -32,6 +32,8 @@ const InfoSection = ({
   dark,
   dark2,
   topLineText,
+  btnLink,
+  btnLinkR,
 }) => {
   return (
     <InfoContainer lightBg={lightBg} id={id}>
@@ -43,19 +45,36 @@ const InfoSection = ({
               <Heading lightText={lightText}>{headline}</Heading>
               <Subtitle darkText={darkText}>{description}</Subtitle>
               <BtnWrap>
-                <Button
-                  to="home"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  offset={-80}
-                  primary={primary ? 1 : 0}
-                  dark={dark ? 0 : 1}
-                  dark2={dark2 ? 1 : 0}
-                >
-                  {buttonLabel}
-                </Button>
+                {!btnLinkR && (
+                  <Button
+                    to={btnLink}
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    primary={primary ? 1 : 0}
+                    dark={dark ? 0 : 1}
+                    dark2={dark2 ? 1 : 0}
+                  >
+                    {buttonLabel}
+                  </Button>
+                )}
+                {btnLinkR && (
+                  <ButtonR
+                    to={btnLink}
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact="true"
+                    offset={-80}
+                    primary={primary ? 1 : 0}
+                    dark={dark ? 0 : 1}
+                    dark2={dark2 ? 1 : 0}
+                  >
+                    {buttonLabel}
+                  </ButtonR>
+                )}
               </BtnWrap>
             </TextWrapper>
           </Column1>

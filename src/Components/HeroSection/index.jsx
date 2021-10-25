@@ -19,7 +19,7 @@ import {
 } from "./HeroElements";
 
 const HeroSection = () => {
-  const [videos, setVideos] = useState([Video, Video1, Video2, Video3, Video4]);
+  const [videos] = useState([Video, Video1, Video2, Video3, Video4]);
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
@@ -38,7 +38,7 @@ const HeroSection = () => {
         />
       </HeroBg>
       <HeroContent>
-        <HeroH1> Kenzie Habit </HeroH1>
+        <HeroH1> Kenzie Habbit </HeroH1>
         <HeroP>
           Crie sua conta hoje, para desenvolver e acompanhar seus habitos
           favoritos

@@ -1,11 +1,8 @@
-import "./App.css";
 import { GroupProvider } from "./Providers/Groups";
 import { HabitsProvider } from "./Providers/Habits";
 import { LoginProvider } from "./Providers/Login";
-import { SpecificGroupProvider } from "./Providers/SpecificGroup";
-import { SubscriptionProvider } from "./Providers/Subscripitons";
 
-import Routes from "./Routes";
+import Routes from "./Routes/index";
 import Global from "./Styles/Global";
 
 function App() {
@@ -14,16 +11,11 @@ function App() {
       <div>
         <LoginProvider>
           <HabitsProvider>
-            <SubscriptionProvider>
-              <GroupProvider>
-                <SpecificGroupProvider>
-                  <Routes />
-                </SpecificGroupProvider>
-              </GroupProvider>
-            </SubscriptionProvider>
+            <GroupProvider>
+              <Routes />
+            </GroupProvider>
           </HabitsProvider>
         </LoginProvider>
-
         <Global />
       </div>
     </div>

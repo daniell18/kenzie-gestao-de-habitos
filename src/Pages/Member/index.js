@@ -1,18 +1,20 @@
-import { useContext } from "react/cjs/react.development";
+import { Redirect } from "react-router";
 import Body from "../../Components/Body";
 import Headers from "../../Components/Headers";
-import { SpecificGroupContext } from "../../Providers/SpecificGroup";
-function Member() {
-  const { specificGroup } = useContext(SpecificGroupContext);
+function Member({ authenticated }) {
   const group = JSON.parse(
     localStorage.getItem("@Kenziehabits:SpecificGroup")
-  ) || [specificGroup];
+  ) || [];
   console.log(group);
+
+  if (!authenticated) {
+    return <Redirect to="/login" />;
+  }
   return (
     <>
       <div>
         <Headers type="Group" group={group} />
-        <Body color="#4da7ad" page="Members" />
+        <Body color="#4da7ad" pages="Members" />
       </div>
     </>
   );
