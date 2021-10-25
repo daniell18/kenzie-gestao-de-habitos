@@ -5,7 +5,7 @@ function Goals({ authenticated }) {
   const group = JSON.parse(
     localStorage.getItem("@Kenziehabits:SpecificGroup")
   ) || [];
-  console.log(group);
+
 
   if (!authenticated) {
     return <Redirect to="/login" />;

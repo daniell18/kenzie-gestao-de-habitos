@@ -28,6 +28,7 @@ function Body({ color, pages, item }) {
   const [specificGroup, setSpecificGroup] = useState(-1);
   const [ setUpadteGoal] = useState(false);
   let id2 = JSON.parse(localStorage.getItem("@Kenziehabits:SpecificGroup"));
+  //Esta aki porque quando estava em um provider o vercel dava erro
   const getGroup = (id) => {
     fetch(`https://kenzie-habits.herokuapp.com/groups/${id}/`)
       .then((response) => response.json())

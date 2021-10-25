@@ -38,13 +38,13 @@ let attButton=false
     })
   }
   const handleSub = (id) => {
-    console.log("teste")
+    
     axios
       .post(`https://kenzie-habits.herokuapp.com/groups/${id}/subscribe/`,null, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-        console.log(response.data)
+        
         subGroup.push(groupsub[0])
         localStorage.setItem("@Kenziehabits:SubscriptionGroup",JSON.stringify(subGroup))
         history.push("/groups")});

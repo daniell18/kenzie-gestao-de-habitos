@@ -83,18 +83,18 @@ const Card = ({
   let val = 0;
   const handleUp = (item) => {
     val = { how_much_achieved: item.how_much_achieved };
-    console.log(val);
+   
     if (item.user) {
       if (val.how_much_achieved === 100) {
         val = {
           how_much_achieved: item.how_much_achieved,
           achieved: true,
         };
-        console.log(val);
+        
       }
       if (item.how_much_achieved < 100) {
         val = { how_much_achieved: item.how_much_achieved + 10 };
-        console.log(val);
+        
       }
       axios
         .patch(`https://kenzie-habits.herokuapp.com/habits/${item.id}/`, val, {
@@ -118,11 +118,11 @@ const Card = ({
           how_much_achieved: item.how_much_achieved,
           achieved: true,
         };
-        console.log(val);
+      
       }
       if (item.how_much_achieved < 100) {
         val = { how_much_achieved: item.how_much_achieved + 10 };
-        console.log(val);
+        
       }
       axios
         .patch(`https://kenzie-habits.herokuapp.com/goals/${item.id}/`, val, {
@@ -148,7 +148,7 @@ const Card = ({
         <div>
           {filtered.map((item, index) => (
             <Conteiner key={index} color={color}>
-              {console.log(item)}
+           
               {item.title && item.frequency ? (
                 <CheckIn onClick={() => handleUp(item)}> Check </CheckIn>
               ) : item.group && item.difficulty ? (

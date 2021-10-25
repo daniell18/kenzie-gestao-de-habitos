@@ -8,7 +8,7 @@ export const HabitsProvider = ({ children }) => {
  
 
   const newHabit=(setFiltered)=>{
-    console.log(token)
+
    axios.get("https://kenzie-habits.herokuapp.com/habits/personal/",{
     headers: {
       Authorization: `Bearer ${token}`,
